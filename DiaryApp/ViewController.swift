@@ -18,6 +18,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.tabBarController?.tabBar.clipsToBounds = true
+        self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
+        self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
+        
     }
 
 
