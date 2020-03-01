@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -18,18 +18,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        setupNavBarAndTabBarUI()
+        
+    }
+    
+    func setupNavBarAndTabBarUI() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.tabBarController?.tabBar.clipsToBounds = true
         self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
         self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
-        
     }
-
-
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cardList.count
@@ -44,9 +46,5 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
         cell.layoutSubviews()
         return cell
-
-        
     }
-    
-    
 }
