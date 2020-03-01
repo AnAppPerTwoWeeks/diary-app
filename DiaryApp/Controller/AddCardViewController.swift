@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddCardViewController: UIViewController {
 
@@ -16,6 +17,10 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     let imagePicker = UIImagePickerController()
+    
+    let realm = try! Realm()
+    
+    var cardArray = [Card]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +47,35 @@ class AddCardViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        let newCard = Card()
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
+        let data = NSData(data: photoImage.image!.jpegData(compressionQuality: 0.7)!)
+        
+        newCard.title = titleTextField.text!
+        newCard.content = contentTextField.text!
+        newCard.date = dateString
+        newCard.cardImage = data
+        
+        cardArray.append(newCard)
+        save(card: newCard)
+        
+    }
+    
+    func save(card: Card) {
+        do {
+            try realm.write {
+                realm.add(card)
+            }
+        } catch {
+            print("Error")
+        }
+    }
+    
 }
 
 //MARK: - UIImagePickerController Methods
@@ -49,8 +83,6 @@ extension AddCardViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             photoImage.image = image
-
-            
         }
         dismiss(animated: true, completion: nil)
     }

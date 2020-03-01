@@ -7,22 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct Card {
-    var cardImage: UIImage
-    var title: String
-    var date: String
-    var content: String
+class Card: Object {
+    @objc dynamic var cardImage: NSData = NSData()
+    @objc dynamic var title: String = ""
+    @objc dynamic var date: String = ""
+    @objc dynamic var content: String = ""
     
-    init(image: UIImage, title: String, content: String) {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: date)
-        self.cardImage = image
-        self.title = title
-        self.date = dateString
-        self.content = content
 
-    }
+//    init(title: String, content: String) {
+//        let date = Date()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let dateString = dateFormatter.string(from: date)
+//       // self.cardImage = image
+//        self.title = title
+//        self.date = dateString
+//        self.content = content
+//
+//    }
 }
