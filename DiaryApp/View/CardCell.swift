@@ -36,4 +36,11 @@ class CardCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
     
+    func update(_ card: Card) {
+        title.text = card.getCardTitle()
+        content.text = card.getCardContent()
+        date.text = card.getCardDate()
+        image.image = card.getCardImage()
+    }
+    
 }
