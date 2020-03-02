@@ -14,13 +14,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let cardManager = CardManager()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         setupNavBarAndTabBarUI()
-        cardManager.loadCardList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +33,17 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
         self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailCard" {
+            if let detailCard = segue.destination as? DetailCardViewController {
+                if let index = sender as? Int {
+                    detailCard.cardManager = cardManager
+                    detailCard.indexPath = index
+                }
+            }
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -46,5 +56,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
         cell.update(cardManager.getCardFromList(indexPath.row))
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailCard", sender: indexPath.row)
     }
 }

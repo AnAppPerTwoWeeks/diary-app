@@ -12,6 +12,7 @@
 		D30B1708240A223B008CDD7F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B1707240A223B008CDD7F /* CardCell.swift */; };
 		D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3101C08240C1EB4009FDD9F /* CardManager.swift */; };
 		D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D311331B240AD7FB00BD9232 /* AddCardViewController.swift */; };
+		D333CEF7240CF36100BDD95E /* DetailCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */; };
 		D3C4DBE6240798A6002D7743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE5240798A6002D7743 /* AppDelegate.swift */; };
 		D3C4DBE8240798A6002D7743 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE7240798A6002D7743 /* SceneDelegate.swift */; };
 		D3C4DBEA240798A6002D7743 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE9240798A6002D7743 /* MainViewController.swift */; };
@@ -27,6 +28,7 @@
 		D30B1707240A223B008CDD7F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		D3101C08240C1EB4009FDD9F /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		D311331B240AD7FB00BD9232 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewController.swift; sourceTree = "<group>"; };
 		D3C4DBE2240798A6002D7743 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C4DBE5240798A6002D7743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C4DBE7240798A6002D7743 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				D3C4DBE9240798A6002D7743 /* MainViewController.swift */,
+				D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */,
 				D311331B240AD7FB00BD9232 /* AddCardViewController.swift */,
 			);
 			path = Controller;
@@ -79,6 +82,7 @@
 		D3101BFE240B9E3D009FDD9F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3C4DBEB240798A6002D7743 /* Main.storyboard */,
 				D30B1707240A223B008CDD7F /* CardCell.swift */,
 			);
 			path = View;
@@ -119,7 +123,6 @@
 				D3101BFF240B9E45009FDD9F /* Model */,
 				D3101BFE240B9E3D009FDD9F /* View */,
 				D3101BFD240B9E29009FDD9F /* Controller */,
-				D3C4DBEB240798A6002D7743 /* Main.storyboard */,
 				D3C4DBEE240798A7002D7743 /* Assets.xcassets */,
 				D3C4DBF0240798A7002D7743 /* LaunchScreen.storyboard */,
 				D3C4DBF3240798A7002D7743 /* Info.plist */,
@@ -247,6 +250,7 @@
 				D3C4DBEA240798A6002D7743 /* MainViewController.swift in Sources */,
 				D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */,
 				D3C4DBE6240798A6002D7743 /* AppDelegate.swift in Sources */,
+				D333CEF7240CF36100BDD95E /* DetailCardViewController.swift in Sources */,
 				D3C4DBE8240798A6002D7743 /* SceneDelegate.swift in Sources */,
 				D30B1706240A2191008CDD7F /* Card.swift in Sources */,
 			);
