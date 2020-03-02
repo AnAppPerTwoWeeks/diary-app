@@ -21,6 +21,10 @@ class CardManager {
         }
     }
     
+    init() {
+        loadCardList()
+    }
+    
     func getCardFromList(_ at: Int) -> Card {
         return cardList![at]
     }
