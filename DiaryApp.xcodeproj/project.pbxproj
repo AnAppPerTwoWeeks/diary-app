@@ -10,6 +10,7 @@
 		86CC05CDB3E95ED89858EB6E /* Pods_DiaryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB78EE4593037BE4BF349C16 /* Pods_DiaryApp.framework */; };
 		D30B1706240A2191008CDD7F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B1705240A2191008CDD7F /* Card.swift */; };
 		D30B1708240A223B008CDD7F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B1707240A223B008CDD7F /* CardCell.swift */; };
+		D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3101C08240C1EB4009FDD9F /* CardManager.swift */; };
 		D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D311331B240AD7FB00BD9232 /* AddCardViewController.swift */; };
 		D3C4DBE6240798A6002D7743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE5240798A6002D7743 /* AppDelegate.swift */; };
 		D3C4DBE8240798A6002D7743 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE7240798A6002D7743 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 		6ABCC8003A6A944920DC9852 /* Pods-DiaryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp.release.xcconfig"; path = "Target Support Files/Pods-DiaryApp/Pods-DiaryApp.release.xcconfig"; sourceTree = "<group>"; };
 		D30B1705240A2191008CDD7F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D30B1707240A223B008CDD7F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		D3101C08240C1EB4009FDD9F /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		D311331B240AD7FB00BD9232 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		D3C4DBE2240798A6002D7743 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C4DBE5240798A6002D7743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		D3101BFF240B9E45009FDD9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3101C08240C1EB4009FDD9F /* CardManager.swift */,
 				D30B1705240A2191008CDD7F /* Card.swift */,
 			);
 			path = Model;
@@ -240,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30B1708240A223B008CDD7F /* CardCell.swift in Sources */,
+				D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */,
 				D3C4DBEA240798A6002D7743 /* MainViewController.swift in Sources */,
 				D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */,
 				D3C4DBE6240798A6002D7743 /* AppDelegate.swift in Sources */,
