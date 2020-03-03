@@ -10,23 +10,17 @@ import UIKit
 import RealmSwift
 
 class Card: Object {
-    @objc dynamic var image: NSData = NSData()
-    @objc dynamic var title: String = ""
-    @objc dynamic var date: String = ""
-    @objc dynamic var content: String = ""
+    @objc dynamic var image: NSData!
+    @objc dynamic var title: String!
+    @objc dynamic var date: Date!
+    @objc dynamic var content: String!
     
     convenience init(_ title: String, _ content: String, _ image: UIImage) {
         self.init()
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
-        let dateString = dateFormatter.string(from: date)
-        let imageData = NSData(data: image.jpegData(compressionQuality: 0.7)!)
-        
         self.title = title
         self.content = content
-        self.date = dateString
-        self.image = imageData
+        self.date = Date()
+        self.image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
     }
     
     func getCardTitle() -> String {
@@ -38,7 +32,9 @@ class Card: Object {
     }
     
     func getCardDate() -> String {
-        return date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        return dateFormatter.string(from: date)
     }
     
     func getCardImage() -> UIImage {

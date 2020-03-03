@@ -13,12 +13,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let cardManager = CardManager()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
         setupNavBarAndTabBarUI()
     }
     
@@ -35,10 +31,11 @@ class MainViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailCard" {
+        if segue.identifier != "DetailCard" {
+            return
+        } else  {
             if let detailCard = segue.destination as? DetailCardViewController {
                 if let index = sender as? Int {
-                    detailCard.cardManager = cardManager
                     detailCard.indexPath = index
                 }
             }
@@ -49,12 +46,12 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cardManager.getCardListCount
+        return CardManager.shared.cardListCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        cell.update(cardManager.getCardFromList(indexPath.row))
+        cell.update(CardManager.shared.getCardFromList(indexPath.row))
         return cell
     }
 

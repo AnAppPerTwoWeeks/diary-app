@@ -17,8 +17,6 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     let imagePicker = UIImagePickerController()
-    
-    let cardManager = CardManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +45,7 @@ class AddCardViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-        cardManager.addNewCard(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!)
+        CardManager.shared.addNewCard(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!)
     }
 }
 
