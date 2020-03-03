@@ -179,11 +179,18 @@
                     <navigationItem key="navigationItem" id="Zud-Ln-kZj">
                         <rightBarButtonItems>
                             <barButtonItem image="trash" catalog="system" id="m6k-PJ-gjf">
+                                <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="deleteButtonPressed:" destination="h6U-Fj-ubx" id="Nw1-ff-gdH"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="Tca-9Y-Pey"/>
+                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="Tca-9Y-Pey">
+                                <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="h6U-Fj-ubx" id="Poa-mg-zwr"/>
+                                    <segue destination="A2Y-jm-Gif" kind="show" identifier="EditCard" id="MFe-FF-b7c"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -277,10 +284,10 @@
                         <viewLayoutGuide key="safeArea" id="673-EJ-oid"/>
                     </view>
                     <navigationItem key="navigationItem" id="swQ-LQ-7px">
-                        <barButtonItem key="leftBarButtonItem" title="취소" id="hAr-aI-QtM">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="hAr-aI-QtM">
                             <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="작성" id="wb6-dt-uHk">
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" catalog="system" id="wb6-dt-uHk">
                             <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="submitButtonPressed:" destination="A2Y-jm-Gif" id="VpZ-5z-YOc"/>
@@ -296,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMv-IM-x2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239" y="865"/>
+            <point key="canvasLocation" x="896" y="1051"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vv1-DP-h6r">
@@ -312,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAv-RI-xcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="865"/>
+            <point key="canvasLocation" x="1635" y="1051"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SY6-vD-QcZ">
@@ -350,10 +357,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG5-4N-I9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-709" y="865"/>
+            <point key="canvasLocation" x="22" y="1052"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
+        <image name="checkmark" catalog="system" width="64" height="56"/>
         <image name="icons8-add-100" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-plus-math-100-2" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-rounded-square-100" width="33.333332061767578" height="33.333332061767578"/>
@@ -361,4 +370,7 @@
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MFe-FF-b7c"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -55,4 +55,16 @@ class CardManager {
         let newCard = Card(title, content, image)
         save(newCard)
     }
+    
+    func editCardByIndex(title: String, content: String, image: UIImage , at: Int ) {
+        do {
+            try realm.write {
+                cardList![at].content = content
+                cardList![at].title = title
+                cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
+            }
+        } catch {
+            print(error)
+        }
+    }
 }

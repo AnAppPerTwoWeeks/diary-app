@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "DetailCard" {
             return
-        } else  {
+        } else {
             if let detailCard = segue.destination as? DetailCardViewController {
                 if let index = sender as? Int {
                     detailCard.indexPath = index
