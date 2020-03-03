@@ -24,7 +24,7 @@ class CardManager {
     }
     
     private init() {
-        cardList = realm.objects(Card.self)
+        cardList = realm.objects(Card.self).sorted(byKeyPath: "date", ascending: false)
     }
     
     func getCardFromList(_ at: Int) -> Card {
@@ -35,6 +35,16 @@ class CardManager {
         do {
             try realm.write {
                 realm.add(object)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func delete<T: Object>(_ object: T) {
+        do {
+            try realm.write {
+                realm.delete(object)
             }
         } catch {
             print(error)

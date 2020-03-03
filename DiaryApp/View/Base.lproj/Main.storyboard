@@ -176,7 +176,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dGF-La-Qep"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Zud-Ln-kZj"/>
+                    <navigationItem key="navigationItem" id="Zud-Ln-kZj">
+                        <rightBarButtonItems>
+                            <barButtonItem image="trash" catalog="system" id="m6k-PJ-gjf">
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="h6U-Fj-ubx" id="Nw1-ff-gdH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="Tca-9Y-Pey"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="cardContent" destination="la9-3u-qT1" id="ZkL-5G-2hd"/>
                         <outlet property="cardDate" destination="ywh-9X-61G" id="3n4-mD-I2p"/>
@@ -349,5 +358,7 @@
         <image name="icons8-plus-math-100-2" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-rounded-square-100" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-settings-100" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
 </document>
