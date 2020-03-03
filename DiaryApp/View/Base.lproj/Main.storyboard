@@ -91,6 +91,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0Bi-BW-m3q"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iPg-4h-0oj"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -283,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMv-IM-x2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218.84057971014494" y="831.69642857142856"/>
+            <point key="canvasLocation" x="239" y="865"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vv1-DP-h6r">
@@ -299,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAv-RI-xcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618.840579710145" y="831.69642857142856"/>
+            <point key="canvasLocation" x="1122" y="865"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SY6-vD-QcZ">
@@ -337,7 +341,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG5-4N-I9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-691.304347826087" y="831.69642857142856"/>
+            <point key="canvasLocation" x="-709" y="865"/>
         </scene>
     </scenes>
     <resources>

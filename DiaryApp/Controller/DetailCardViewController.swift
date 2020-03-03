@@ -15,19 +15,12 @@ class DetailCardViewController: UIViewController {
     @IBOutlet weak var cardTitle: UILabel!
     @IBOutlet weak var cardImage: UIImageView!
     
-    var cardManager = CardManager()
-    var indexPath = 0
+    var indexPath: Int!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupDetailCard(cardManager, indexPath)
+    override func viewWillAppear(_ animated: Bool) {
+        cardContent.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
+        cardTitle.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
+        cardDate.text = CardManager.shared.getCardFromList(indexPath).getCardDate()
+        cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
     }
-    
-    func setupDetailCard(_ manager: CardManager, _ index: Int) {
-        cardContent.text = manager.getCardFromList(index).getCardContent()
-        cardTitle.text = manager.getCardFromList(index).getCardTitle()
-        cardDate.text = manager.getCardFromList(index).getCardDate()
-        cardImage.image = manager.getCardFromList(index).getCardImage()
-    }
-
 }

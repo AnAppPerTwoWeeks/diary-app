@@ -11,40 +11,38 @@ import RealmSwift
 
 class CardManager {
     
-    var realm = try! Realm()
+    static let shared = CardManager()
     
-    var cardList: Results<Card>?
+    private var realm = try! Realm()
     
-    var getCardListCount: Int {
+    private var cardList: Results<Card>?
+    
+    var cardListCount: Int {
         get {
             cardList?.count ?? 0
         }
     }
     
-    init() {
-        loadCardList()
+    private init() {
+        cardList = realm.objects(Card.self)
     }
     
     func getCardFromList(_ at: Int) -> Card {
         return cardList![at]
     }
     
-    func saveCard(_ card: Card) {
+    func save<T: Object>(_ object: T) {
         do {
             try realm.write {
-                realm.add(card)
+                realm.add(object)
             }
         } catch {
             print(error)
         }
     }
     
-    func loadCardList() {
-        cardList = realm.objects(Card.self)
-    }
-    
     func addNewCard(title: String, content: String, image: UIImage) {
         let newCard = Card(title, content, image)
-        saveCard(newCard)
+        save(newCard)
     }
 }
