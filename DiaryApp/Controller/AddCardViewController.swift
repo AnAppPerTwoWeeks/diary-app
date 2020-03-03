@@ -17,6 +17,8 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     let imagePicker = UIImagePickerController()
+    
+    var indexPath: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,12 @@ class AddCardViewController: UIViewController {
         
         setupTextFieldUI()
         setupKeyboardEventListner()
+        
+        if indexPath != nil {
+            contentTextField.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
+            titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
+            photoImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
+        }
     }
     
     deinit {
@@ -45,7 +53,11 @@ class AddCardViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-        CardManager.shared.addNewCard(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!)
+        if indexPath != nil {
+            CardManager.shared.editCardByIndex(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!, at: indexPath)
+        } else {
+            CardManager.shared.addNewCard(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!)
+        }
     }
 }
 

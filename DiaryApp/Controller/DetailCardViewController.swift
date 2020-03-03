@@ -24,8 +24,23 @@ class DetailCardViewController: UIViewController {
         cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
     }
     
+    @IBAction func editButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "EditCard", sender: indexPath)
+    }
+    
     @IBAction func deleteButtonPressed(_ sender: Any) {
         CardManager.shared.delete(CardManager.shared.getCardFromList(indexPath))
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "EditCard" {
+            return
+        } else {
+            if let EditCard = segue.destination as? AddCardViewController {
+                EditCard.indexPath = indexPath
+            }
+        }
+    }
+    
 }
