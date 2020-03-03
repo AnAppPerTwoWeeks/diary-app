@@ -23,4 +23,9 @@ class DetailCardViewController: UIViewController {
         cardDate.text = CardManager.shared.getCardFromList(indexPath).getCardDate()
         cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
     }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        CardManager.shared.delete(CardManager.shared.getCardFromList(indexPath))
+        self.navigationController?.popViewController(animated: true)
+    }
 }
