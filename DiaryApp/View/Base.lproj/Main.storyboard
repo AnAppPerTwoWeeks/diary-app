@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="119"/>
+            <point key="canvasLocation" x="1720" y="119"/>
         </scene>
         <!--Detail Card View Controller-->
         <scene sceneID="P6b-nO-nUO">
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKq-CA-ubz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2386.9565217391305" y="118.52678571428571"/>
+            <point key="canvasLocation" x="2536" y="119"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PJb-oc-DId">
@@ -216,7 +216,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="aUQ-pR-BXB" kind="relationship" relationship="viewControllers" id="ot2-8a-Njf"/>
-                        <segue destination="4wR-Qw-sv4" kind="relationship" relationship="viewControllers" id="Dr0-LR-6Cb"/>
                         <segue destination="eep-hl-KZn" kind="relationship" relationship="viewControllers" id="VPC-hd-JeY"/>
                     </connections>
                 </tabBarController>
@@ -284,9 +283,6 @@
                         <viewLayoutGuide key="safeArea" id="673-EJ-oid"/>
                     </view>
                     <navigationItem key="navigationItem" id="swQ-LQ-7px">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="hAr-aI-QtM">
-                            <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="checkmark" catalog="system" id="wb6-dt-uHk">
                             <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -319,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAv-RI-xcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="1051"/>
+            <point key="canvasLocation" x="22" y="1051"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SY6-vD-QcZ">
@@ -340,37 +336,13 @@
             </objects>
             <point key="canvasLocation" x="896" y="119"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="iHD-eK-e2k">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4wR-Qw-sv4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-add-100" id="Dzp-nH-71R"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tRS-zu-3YQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="A2Y-jm-Gif" kind="relationship" relationship="rootViewController" id="o8j-v1-4uA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XG5-4N-I9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="22" y="1052"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="checkmark" catalog="system" width="64" height="56"/>
-        <image name="icons8-add-100" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-plus-math-100-2" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-rounded-square-100" width="33.333332061767578" height="33.333332061767578"/>
         <image name="icons8-settings-100" width="33.333332061767578" height="33.333332061767578"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="MFe-FF-b7c"/>
-    </inferredMetricsTieBreakers>
 </document>

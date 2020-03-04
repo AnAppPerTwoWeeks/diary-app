@@ -32,7 +32,7 @@ class DetailCardViewController: UIViewController {
         CardManager.shared.delete(CardManager.shared.getCardFromList(indexPath))
         self.navigationController?.popViewController(animated: false)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "EditCard" {
             return
