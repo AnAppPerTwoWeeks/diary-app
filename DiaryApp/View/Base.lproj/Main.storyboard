@@ -175,29 +175,18 @@
                         <viewLayoutGuide key="safeArea" id="dGF-La-Qep"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zud-Ln-kZj">
-                        <rightBarButtonItems>
-                            <barButtonItem image="trash" catalog="system" id="m6k-PJ-gjf">
-                                <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="deleteButtonPressed:" destination="h6U-Fj-ubx" id="Nw1-ff-gdH"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="pencil.and.ellipsis.rectangle" catalog="system" id="Tca-9Y-Pey">
-                                <color key="tintColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="editButtonPressed:" destination="h6U-Fj-ubx" id="Poa-mg-zwr"/>
-                                    <segue destination="A2Y-jm-Gif" kind="show" identifier="EditCard" id="tzh-zI-5vC"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="more" id="4pY-PI-NOc">
-                                <color key="tintColor" red="0.32156862745098036" green="0.38039215686274508" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="4pY-PI-NOc">
+                            <color key="tintColor" red="0.32156862745098036" green="0.38039215686274508" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="moreButtonPressed:" destination="h6U-Fj-ubx" id="rbe-c4-VUO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cardContent" destination="la9-3u-qT1" id="ZkL-5G-2hd"/>
                         <outlet property="cardDate" destination="ywh-9X-61G" id="3n4-mD-I2p"/>
                         <outlet property="cardImage" destination="idL-tR-Cav" id="mnT-6S-KVv"/>
+                        <segue destination="A2Y-jm-Gif" kind="show" identifier="EditCard" id="IOY-x1-M8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKq-CA-ubz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -348,14 +337,12 @@
         <image name="check" width="25" height="25"/>
         <image name="delete" width="25" height="25"/>
         <image name="more" width="25" height="25"/>
-        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="photo" catalog="system" width="64" height="46"/>
         <image name="settings_selected" width="25" height="25"/>
         <image name="settings_unselected" width="25" height="25"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tzh-zI-5vC"/>
+        <segue reference="IOY-x1-M8F"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.13333333333333333" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
 </document>

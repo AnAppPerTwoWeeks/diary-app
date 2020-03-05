@@ -24,14 +24,28 @@ class DetailCardViewController: UIViewController {
         cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
     }
     
-    @IBAction func editButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "EditCard", sender: indexPath)
+    @IBAction func moreButtonPressed(_ sender: Any) {
+        
+        let alert = UIAlertController(title: nil, message: nil , preferredStyle: .actionSheet)
+        
+        let editAction = UIAlertAction(title: "수정", style: .default) { (action) in
+            self.performSegue(withIdentifier: "EditCard", sender: self.indexPath)
+        }
+        
+        let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { (action) in
+            CardManager.shared.delete(CardManager.shared.getCardFromList(self.indexPath))
+            self.navigationController?.popViewController(animated: false)
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+        }
+        
+        alert.addAction(editAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
     }
     
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        CardManager.shared.delete(CardManager.shared.getCardFromList(indexPath))
-        self.navigationController?.popViewController(animated: false)
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "EditCard" {
