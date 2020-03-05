@@ -12,7 +12,7 @@ import RealmSwift
 class AddCardViewController: UIViewController {
 
     @IBOutlet weak var contentTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
+   // @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
     
@@ -59,15 +59,31 @@ class AddCardViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func submitButtonPressed(_ sender: Any) {
-        if indexPath != nil {
-            CardManager.shared.editCardByIndex(content: contentTextField.text!, image: photoImage.image!, at: indexPath)
-        } else {
-            CardManager.shared.addNewCard(content: contentTextField.text!, image: photoImage.image!)
-        }
+        if photoImage.image == nil {
+            alertIfFieldIsEmpty(message: "사진을 추가해주세요.")
+        } else if contentTextField.text == "" {
+            alertIfFieldIsEmpty(message: "내용을 입력해주세요.")
+        }else {
+            if indexPath != nil {
+                CardManager.shared.editCardByIndex(contentTextField.text!, photoImage.image!, at: indexPath)
+            } else {
+                CardManager.shared.addNewCard(contentTextField.text!, photoImage.image!)
+            }
         navigationController?.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func alertIfFieldIsEmpty(message: String) {
+        let notice = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+           present(notice, animated:true)
+           
+           Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+               self.dismiss(animated: true, completion: nil)
+           }
     }
 }
 
