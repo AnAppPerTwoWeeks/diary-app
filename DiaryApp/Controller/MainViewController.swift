@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         setupNavBarAndTabBarUI()
     }
     
@@ -25,6 +26,7 @@ class MainViewController: UIViewController {
     func setupNavBarAndTabBarUI() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tabBarController?.tabBar.clipsToBounds = true
         self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
         self.tabBarController?.tabBar.standardAppearance.shadowColor = nil

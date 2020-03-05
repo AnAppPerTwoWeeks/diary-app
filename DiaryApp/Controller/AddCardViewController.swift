@@ -24,14 +24,17 @@ class AddCardViewController: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
         contentTextField.delegate = self
-        titleTextField.delegate = self
+        //titleTextField.delegate = self
         
         setupTextFieldUI()
         setupKeyboardEventListner()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         if indexPath != nil {
             contentTextField.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
-            titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
+            //titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
             photoImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
         }
     }
@@ -52,12 +55,19 @@ class AddCardViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func cancelButoonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func submitButtonPressed(_ sender: Any) {
         if indexPath != nil {
-            CardManager.shared.editCardByIndex(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!, at: indexPath)
+            CardManager.shared.editCardByIndex(content: contentTextField.text!, image: photoImage.image!, at: indexPath)
         } else {
-            CardManager.shared.addNewCard(title: titleTextField.text!, content: contentTextField.text!, image: photoImage.image!)
+            CardManager.shared.addNewCard(content: contentTextField.text!, image: photoImage.image!)
         }
+        navigationController?.popToRootViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -85,7 +95,7 @@ extension AddCardViewController: UITextFieldDelegate {
     }
     
     func hideKeyboard() {
-        titleTextField.resignFirstResponder()
+        //titleTextField.resignFirstResponder()
         contentTextField.resignFirstResponder()
     }
     
@@ -103,8 +113,8 @@ extension AddCardViewController: UITextFieldDelegate {
     
     func setupTextFieldUI() {
         let borderColor = UIColor.white
-        titleTextField.layer.borderWidth = 1
-        titleTextField.layer.borderColor = borderColor.cgColor
+//        titleTextField.layer.borderWidth = 1
+        //titleTextField.layer.borderColor = borderColor.cgColor
         contentTextField.layer.borderWidth = 1
         contentTextField.layer.borderColor = borderColor.cgColor
     }

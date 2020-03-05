@@ -19,7 +19,7 @@ class DetailCardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cardContent.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
-        cardTitle.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
+       //cardTitle.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
         cardDate.text = CardManager.shared.getCardFromList(indexPath).getCardDate()
         cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
     }
@@ -32,7 +32,7 @@ class DetailCardViewController: UIViewController {
         CardManager.shared.delete(CardManager.shared.getCardFromList(indexPath))
         self.navigationController?.popViewController(animated: false)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "EditCard" {
             return
