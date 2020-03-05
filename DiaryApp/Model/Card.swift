@@ -11,21 +11,21 @@ import RealmSwift
 
 class Card: Object {
     @objc dynamic var image: NSData!
-    @objc dynamic var title: String!
+    //@objc dynamic var title: String!
     @objc dynamic var date: Date!
     @objc dynamic var content: String!
     
-    convenience init(_ title: String, _ content: String, _ image: UIImage) {
+    convenience init(_ content: String, _ image: UIImage) {
         self.init()
-        self.title = title
+        //self.title = title
         self.content = content
         self.date = Date()
         self.image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
     }
     
-    func getCardTitle() -> String {
-        return title
-    }
+//    func getCardTitle() -> String {
+//        return title
+//    }
     
     func getCardContent() -> String {
         return content

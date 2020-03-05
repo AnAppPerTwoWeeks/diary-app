@@ -19,7 +19,7 @@ class DetailCardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         cardContent.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
-        cardTitle.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
+       //cardTitle.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
         cardDate.text = CardManager.shared.getCardFromList(indexPath).getCardDate()
         cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
     }
