@@ -186,16 +186,23 @@
                     <navigationItem key="navigationItem" id="ZZz-Ni-kZM">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="calendar" id="Fmk-eh-RWc"/>
-                            <barButtonItem title="Item" id="g96-af-sVC">
+                            <barButtonItem title="Item" image="listView_unselected" id="g96-af-sVC">
                                 <connections>
                                     <action selector="listViewButtonPressed:" destination="BYZ-38-t0r" id="S0v-YL-v6q"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="cardView_unselected" id="9rA-kF-Kcr">
+                                <connections>
+                                    <action selector="cardViewButtonPressed:" destination="BYZ-38-t0r" id="W97-e4-i89"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cardViewImage" destination="9rA-kF-Kcr" id="ael-3C-lbb"/>
                         <outlet property="collectionView" destination="r2w-PY-vVq" id="HG7-63-sBC"/>
+                        <outlet property="listViewImage" destination="g96-af-sVC" id="8lG-c3-Qsi"/>
                         <segue destination="h6U-Fj-ubx" kind="show" identifier="DetailCard" id="jrb-Zh-O2A"/>
                     </connections>
                 </viewController>
@@ -412,8 +419,10 @@
         <image name="calendar" width="25" height="25"/>
         <image name="cardList_selected" width="25" height="25"/>
         <image name="cardList_unselected" width="25" height="25"/>
+        <image name="cardView_unselected" width="25" height="25"/>
         <image name="check" width="25" height="25"/>
         <image name="delete" width="25" height="25"/>
+        <image name="listView_unselected" width="25" height="25"/>
         <image name="more" width="25" height="25"/>
         <image name="photo" catalog="system" width="64" height="46"/>
         <image name="settings_selected" width="25" height="25"/>

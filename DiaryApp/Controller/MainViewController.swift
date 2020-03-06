@@ -12,6 +12,11 @@ import RealmSwift
 class MainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var cardViewImage: UIBarButtonItem!
+    @IBOutlet weak var listViewImage: UIBarButtonItem!
+    
+    
+    
     var cellIndex = 0
     
     override func viewDidLoad() {
@@ -31,6 +36,7 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.clipsToBounds = true
         self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
         self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
+        self.cardViewImage.image = UIImage(named: "cardView_selected")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,8 +50,19 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func cardViewButtonPressed(_ sender: Any) {
+        cellIndex = 0
+        cardViewImage.image = UIImage(named: "cardView_selected")
+        listViewImage.image = UIImage(named: "listView_unselected")
+        collectionView.reloadData()
+    }
+    
+    
     @IBAction func listViewButtonPressed(_ sender: Any) {
-        cellIndex = (cellIndex == 1) ? 0 : 1
+        cellIndex = 1
+        cardViewImage.image = UIImage(named: "cardView_unselected")
+        listViewImage.image = UIImage(named: "listView_selected")
         collectionView.reloadData()
     }
 }
