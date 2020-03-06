@@ -12,6 +12,7 @@ import RealmSwift
 class MainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var cellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,10 @@ class MainViewController: UIViewController {
             }
         }
     }
+    @IBAction func listViewButtonPressed(_ sender: Any) {
+        cellIndex = (cellIndex == 1) ? 0 : 1
+        collectionView.reloadData()
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -52,7 +57,17 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+        
+        var cell: CardCell
+        
+        switch cellIndex {
+        case 0:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+        case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCardCell", for: indexPath) as! CardCell
+        default:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+        }
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
         return cell
     }

@@ -96,6 +96,77 @@
                                             <outlet property="image" destination="Ymf-pr-3n3" id="qhX-C3-HHq"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ListCardCell" id="b2Q-TU-HCx" customClass="CardCell" customModule="DiaryApp" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="500" width="300" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-JU-sU9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Imv-71-3tE"/>
+                                                        <constraint firstAttribute="width" constant="100" id="cBF-Vx-IY8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bum-rj-TqT">
+                                                    <rect key="frame" x="100" y="0.0" width="200" height="100"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-cK-aB6">
+                                                            <rect key="frame" x="8" y="31" width="184" height="61"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Content">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="17" name="Cafe24Oneprettynight"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDi-d1-GqQ">
+                                                            <rect key="frame" x="8" y="8" width="184" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="zwa-hJ-EXJ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="12"/>
+                                                            <color key="textColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Coa-cK-aB6" firstAttribute="top" secondItem="lDi-d1-GqQ" secondAttribute="bottom" constant="8" id="0VG-g9-0Jg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="lDi-d1-GqQ" secondAttribute="trailing" constant="8" id="IyT-Lp-fkC"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Coa-cK-aB6" secondAttribute="bottom" constant="8" id="KzT-1c-57M"/>
+                                                        <constraint firstItem="lDi-d1-GqQ" firstAttribute="top" secondItem="bum-rj-TqT" secondAttribute="top" constant="8" id="g0J-x3-3LM"/>
+                                                        <constraint firstAttribute="height" constant="100" id="lhj-nd-rUy"/>
+                                                        <constraint firstItem="lDi-d1-GqQ" firstAttribute="leading" secondItem="bum-rj-TqT" secondAttribute="leading" constant="8" id="n3z-ii-BlC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Coa-cK-aB6" secondAttribute="trailing" constant="8" id="q2a-sE-PNN"/>
+                                                        <constraint firstItem="Coa-cK-aB6" firstAttribute="leading" secondItem="bum-rj-TqT" secondAttribute="leading" constant="8" id="s9L-ns-uzj"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="LM7-JU-sU9" firstAttribute="top" secondItem="b2Q-TU-HCx" secondAttribute="top" id="4r8-t9-YQQ"/>
+                                            <constraint firstItem="LM7-JU-sU9" firstAttribute="leading" secondItem="b2Q-TU-HCx" secondAttribute="leading" id="BRr-vv-Ndk"/>
+                                            <constraint firstItem="bum-rj-TqT" firstAttribute="leading" secondItem="LM7-JU-sU9" secondAttribute="trailing" id="Czf-GB-WY0"/>
+                                            <constraint firstItem="bum-rj-TqT" firstAttribute="leading" secondItem="LM7-JU-sU9" secondAttribute="trailing" id="EID-ud-tVv"/>
+                                            <constraint firstAttribute="bottom" secondItem="LM7-JU-sU9" secondAttribute="bottom" id="FET-aa-M7a"/>
+                                            <constraint firstAttribute="bottom" secondItem="bum-rj-TqT" secondAttribute="bottom" id="YRK-yB-Bbx"/>
+                                            <constraint firstAttribute="trailing" secondItem="bum-rj-TqT" secondAttribute="trailing" id="cDH-0J-R7S"/>
+                                            <constraint firstItem="bum-rj-TqT" firstAttribute="top" secondItem="b2Q-TU-HCx" secondAttribute="top" id="wH9-0z-wIt"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="100"/>
+                                        <connections>
+                                            <outlet property="content" destination="Coa-cK-aB6" id="fB9-ks-iz8"/>
+                                            <outlet property="date" destination="lDi-d1-GqQ" id="OWc-dy-Nac"/>
+                                            <outlet property="image" destination="LM7-JU-sU9" id="qYM-61-BbC"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="0Bi-BW-m3q"/>
@@ -113,7 +184,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZZz-Ni-kZM">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="calendar" id="Fmk-eh-RWc"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="calendar" id="Fmk-eh-RWc"/>
+                            <barButtonItem title="Item" id="g96-af-sVC">
+                                <connections>
+                                    <action selector="listViewButtonPressed:" destination="BYZ-38-t0r" id="S0v-YL-v6q"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -123,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-562" y="915"/>
+            <point key="canvasLocation" x="-562.31884057971024" y="914.73214285714278"/>
         </scene>
         <!--Detail Card View Controller-->
         <scene sceneID="P6b-nO-nUO">

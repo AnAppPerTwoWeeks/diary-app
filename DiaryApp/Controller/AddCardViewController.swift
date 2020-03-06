@@ -73,7 +73,6 @@ class AddCardViewController: UIViewController {
             }
         navigationController?.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
         }
     }
     
