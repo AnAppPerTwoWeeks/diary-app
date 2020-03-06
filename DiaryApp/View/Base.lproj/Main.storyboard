@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F0X-YG-bOM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F0X-YG-bOM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,7 +62,7 @@
                                                         <fragment content="Content">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="17" name="Cafe24Oneprettynight"/>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -104,22 +104,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-JU-sU9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="400"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Imv-71-3tE"/>
                                                         <constraint firstAttribute="width" constant="100" id="cBF-Vx-IY8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bum-rj-TqT">
-                                                    <rect key="frame" x="100" y="0.0" width="200" height="100"/>
+                                                    <rect key="frame" x="100" y="0.0" width="200" height="400"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-cK-aB6">
-                                                            <rect key="frame" x="8" y="31" width="184" height="61"/>
+                                                            <rect key="frame" x="8" y="31" width="184" height="361"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Content">
                                                                     <attributes>
                                                                         <color key="NSColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="17" name="Cafe24Oneprettynight"/>
+                                                                        <font key="NSFont" metaFont="system" size="17"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -217,7 +217,7 @@
                                     <fragment content="Content">
                                         <attributes>
                                             <color key="NSColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="Cafe24Oneprettynight"/>
+                                            <font key="NSFont" metaFont="system" size="20"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -271,11 +271,12 @@
             </objects>
             <point key="canvasLocation" x="143" y="915"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root Tab Bar Controller-->
         <scene sceneID="PJb-oc-DId">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F0X-YG-bOM" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F0X-YG-bOM" customClass="RootTabBarController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="KGx-81-8OW"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9iy-PG-I7s">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -301,13 +302,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPk-pA-oSx">
-                                <rect key="frame" x="57" y="118" width="300" height="400"/>
+                                <rect key="frame" x="57" y="74" width="300" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="kfo-lm-KK0"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해주세요." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1F-GD-3Dk">
-                                <rect key="frame" x="57" y="551" width="300" height="36"/>
+                                <rect key="frame" x="57" y="507" width="300" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="qpZ-wa-K8S"/>
                                 </constraints>
@@ -315,7 +316,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFP-tK-Qj8">
-                                <rect key="frame" x="195" y="526" width="24" height="20"/>
+                                <rect key="frame" x="195" y="482" width="24" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="0uV-xT-HxL"/>
                                     <constraint firstAttribute="height" constant="20" id="eC7-vc-Tlg"/>
@@ -420,7 +421,7 @@
         <image name="settings_unselected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IOY-x1-M8F"/>
+        <segue reference="SzS-Fe-Rbl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.13333333333333333" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
 </document>

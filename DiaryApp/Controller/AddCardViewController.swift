@@ -61,18 +61,25 @@ class AddCardViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
-        if photoImage.image == nil {
+        if ( photoImage.image == nil ) {
             alertIfFieldIsEmpty(message: "사진을 추가해주세요.")
-        } else if contentTextField.text == "" {
+            return
+        } else if ( contentTextField.text == "" ) {
             alertIfFieldIsEmpty(message: "내용을 입력해주세요.")
-        }else {
-            if indexPath != nil {
-                CardManager.shared.editCardByIndex(contentTextField.text!, photoImage.image!, at: indexPath)
-            } else {
-                CardManager.shared.addNewCard(contentTextField.text!, photoImage.image!)
-            }
-        navigationController?.popToRootViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+            return
+        }
+
+        
+        if indexPath != nil {
+            CardManager.shared.editCardByIndex(contentTextField.text!, photoImage.image!, at: indexPath)
+        } else {
+            CardManager.shared.addNewCard(contentTextField.text!, photoImage.image!)
+        }
+            
+        if let currentNavigationController = navigationController {
+            currentNavigationController.popToRootViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
         }
     }
     

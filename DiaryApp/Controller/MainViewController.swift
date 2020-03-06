@@ -16,9 +16,11 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+//        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         setupNavBarAndTabBarUI()
+        
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
       collectionView.reloadData()

@@ -37,11 +37,11 @@ class Card: Object {
         return dateFormatter.string(from: date)
     }
     
-    func getCardImage() -> UIImage {
-        var cardImage = UIImage()
+    func getCardImage() -> UIImage? {
         if let imageData = UIImage(data: image as Data) {
-            cardImage = imageData
+            return imageData
+        } else {
+            return nil
         }
-        return cardImage
     }
 }

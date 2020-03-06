@@ -20,6 +20,7 @@
 		D3C4DBED240798A6002D7743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C4DBEB240798A6002D7743 /* Main.storyboard */; };
 		D3C4DBEF240798A7002D7743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3C4DBEE240798A7002D7743 /* Assets.xcassets */; };
 		D3C4DBF2240798A7002D7743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C4DBF0240798A7002D7743 /* LaunchScreen.storyboard */; };
+		E8A5402E241296AB00F2542C /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A5402D241296AB00F2542C /* RootTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D3C4DBEE240798A7002D7743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C4DBF1240798A7002D7743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3C4DBF3240798A7002D7743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A5402D241296AB00F2542C /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EB78EE4593037BE4BF349C16 /* Pods_DiaryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiaryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				D3C4DBE9240798A6002D7743 /* MainViewController.swift */,
 				D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */,
 				D311331B240AD7FB00BD9232 /* AddCardViewController.swift */,
+				E8A5402D241296AB00F2542C /* RootTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30B1708240A223B008CDD7F /* CardCell.swift in Sources */,
+				E8A5402E241296AB00F2542C /* RootTabBarController.swift in Sources */,
 				D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */,
 				D3C4DBEA240798A6002D7743 /* MainViewController.swift in Sources */,
 				D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */,
