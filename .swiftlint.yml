@@ -1,0 +1,15 @@
+
+disabled_rules:
+- line_length
+- identifier_name
+- unused_optional_binding
+- trailing_whitespace
+
+opt_in_rules:
+- indentation_width
+
+included:
+
+excluded:
+- Pods
+- /DiaryApp/Model/CardManager.swift

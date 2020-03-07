@@ -7,4 +7,5 @@ target 'DiaryApp' do
 
   # Pods for DiaryApp
 pod 'RealmSwift'
+pod 'SwiftLint'
 end

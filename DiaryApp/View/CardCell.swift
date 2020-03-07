@@ -9,7 +9,7 @@
 import UIKit
 
 class CardCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
@@ -21,7 +21,7 @@ class CardCell: UICollectionViewCell {
         self.layer.borderWidth = 5.0
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.masksToBounds = true
-        
+
         // cell shadow section
         self.contentView.layer.cornerRadius = 15.0
         self.contentView.layer.borderWidth = 5.0
@@ -35,12 +35,12 @@ class CardCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
-    
+
     func update(_ card: Card) {
         //title.text = card.getCardTitle()
         content.text = card.getCardContent()
         date.text = card.getCardDate()
         image.image = card.getCardImage()
     }
-    
+
 }

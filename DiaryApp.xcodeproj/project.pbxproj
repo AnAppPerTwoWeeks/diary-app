@@ -13,6 +13,7 @@
 		D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3101C08240C1EB4009FDD9F /* CardManager.swift */; };
 		D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D311331B240AD7FB00BD9232 /* AddCardViewController.swift */; };
 		D333CEF7240CF36100BDD95E /* DetailCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */; };
+		D36DD0AE2413958300154CD5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D36DD0AD2413958300154CD5 /* .swiftlint.yml */; };
 		D3A3C3082410F05D00EB11B8 /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3A3C3072410F05900EB11B8 /* Cafe24Oneprettynight.ttf */; };
 		D3C4DBE6240798A6002D7743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE5240798A6002D7743 /* AppDelegate.swift */; };
 		D3C4DBE8240798A6002D7743 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4DBE7240798A6002D7743 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		D3101C08240C1EB4009FDD9F /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		D311331B240AD7FB00BD9232 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewController.swift; sourceTree = "<group>"; };
+		D36DD0AD2413958300154CD5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D3A3C3072410F05900EB11B8 /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
 		D3C4DBE2240798A6002D7743 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C4DBE5240798A6002D7743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		D3C4DBD9240798A6002D7743 = {
 			isa = PBXGroup;
 			children = (
+				D36DD0AD2413958300154CD5 /* .swiftlint.yml */,
 				D3C4DBE4240798A6002D7743 /* DiaryApp */,
 				D3C4DBE3240798A6002D7743 /* Products */,
 				60D2A91DC99293564B6B6E16 /* Pods */,
@@ -156,6 +159,7 @@
 				D3C4DBDF240798A6002D7743 /* Frameworks */,
 				D3C4DBE0240798A6002D7743 /* Resources */,
 				C0E8C0000016421B96F9B702 /* [CP] Embed Pods Frameworks */,
+				D36DD0AC2413945700154CD5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -204,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36DD0AE2413958300154CD5 /* .swiftlint.yml in Resources */,
 				D3C4DBF2240798A7002D7743 /* LaunchScreen.storyboard in Resources */,
 				D3C4DBEF240798A7002D7743 /* Assets.xcassets in Resources */,
 				D3C4DBED240798A6002D7743 /* Main.storyboard in Resources */,
@@ -252,6 +257,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D36DD0AC2413945700154CD5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -21,19 +21,19 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var listViewImage: UIBarButtonItem!
 
     var cellIndex = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+        //        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         setupNavBarAndTabBarUI()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-      collectionView.reloadData()
+        collectionView.reloadData()
     }
-    
+
     func setupNavBarAndTabBarUI() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tabBarController?.tabBar.clipsToBounds = true
@@ -53,15 +53,14 @@ class CardListViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func cardViewButtonPressed(_ sender: Any) {
         cellIndex = 0
         cardViewImage.image = UIImage(named: "cardView_selected")
         listViewImage.image = UIImage(named: "listView_unselected")
         collectionView.reloadData()
     }
-    
-    
+
     @IBAction func listViewButtonPressed(_ sender: Any) {
         cellIndex = 1
         cardViewImage.image = UIImage(named: "cardView_unselected")
@@ -78,17 +77,21 @@ extension CardListViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell: CardCell
+        var cell = CardCell()
         
         if cellIndex == CellIndexType.cardView.rawValue {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
+            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCell {
+                cell = reusableCell
+            }
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCardCell", for: indexPath) as! CardCell
+            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCardCell", for: indexPath) as? CardCell {
+                cell = reusableCell
+            }
         }
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "DetailCard", sender: indexPath.row)
     }
