@@ -9,19 +9,22 @@
 import UIKit
 import RealmSwift
 
-class MainViewController: UIViewController {
+enum CellIndexType: Int {
+    case cardView
+    case listView
+}
+
+class CardListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardViewImage: UIBarButtonItem!
     @IBOutlet weak var listViewImage: UIBarButtonItem!
-    
-    
-    
+
     var cellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+//        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         setupNavBarAndTabBarUI()
     }
     
@@ -67,7 +70,7 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CardListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return CardManager.shared.cardListCount
@@ -77,18 +80,15 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         var cell: CardCell
         
-        switch cellIndex {
-        case 0:
+        if cellIndex == CellIndexType.cardView.rawValue {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
-        case 1:
+        } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCardCell", for: indexPath) as! CardCell
-        default:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCell
         }
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "DetailCard", sender: indexPath.row)
     }

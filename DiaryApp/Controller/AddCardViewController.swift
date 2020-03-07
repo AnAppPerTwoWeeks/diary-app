@@ -10,16 +10,16 @@ import UIKit
 import RealmSwift
 
 class AddCardViewController: UIViewController {
-
+    
     @IBOutlet weak var contentTextField: UITextField!
-   // @IBOutlet weak var titleTextField: UITextField!
+    // @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
     
     let imagePicker = UIImagePickerController()
     
     var indexPath: Int!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -34,8 +34,8 @@ class AddCardViewController: UIViewController {
         
         if indexPath != nil {
             contentTextField.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
-            //titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
             photoImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
+            //titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
         }
     }
     
@@ -56,33 +56,43 @@ class AddCardViewController: UIViewController {
     }
     
     @IBAction func cancelButoonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
+        checkSegueType()
+    }
+    
+    func checkSegueType() {
+        if let currentNavigationController = navigationController {
+            currentNavigationController.popToRootViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
         if photoImage.image == nil {
             alertIfFieldIsEmpty(message: "사진을 추가해주세요.")
+            return
         } else if contentTextField.text == "" {
             alertIfFieldIsEmpty(message: "내용을 입력해주세요.")
-        }else {
-            if indexPath != nil {
-                CardManager.shared.editCardByIndex(contentTextField.text!, photoImage.image!, at: indexPath)
-            } else {
-                CardManager.shared.addNewCard(contentTextField.text!, photoImage.image!)
-            }
-        navigationController?.popToRootViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+            return
         }
+        
+        if indexPath != nil {
+            CardManager.shared.editCardByIndex(contentTextField.text!, photoImage.image!, at: indexPath)
+        } else {
+            CardManager.shared.addNewCard(contentTextField.text!, photoImage.image!)
+        }
+        
+        checkSegueType()
     }
+    
     
     func alertIfFieldIsEmpty(message: String) {
         let notice = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-           present(notice, animated:true)
-           
-           Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-               self.dismiss(animated: true, completion: nil)
-           }
+        present(notice, animated:true)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -110,8 +120,8 @@ extension AddCardViewController: UITextFieldDelegate {
     }
     
     func hideKeyboard() {
-        //titleTextField.resignFirstResponder()
         contentTextField.resignFirstResponder()
+        //titleTextField.resignFirstResponder()
     }
     
     @objc func keyboardWillChange(notification: Notification) {
@@ -128,10 +138,10 @@ extension AddCardViewController: UITextFieldDelegate {
     
     func setupTextFieldUI() {
         let borderColor = UIColor.white
-//        titleTextField.layer.borderWidth = 1
-        //titleTextField.layer.borderColor = borderColor.cgColor
         contentTextField.layer.borderWidth = 1
         contentTextField.layer.borderColor = borderColor.cgColor
+        //        titleTextField.layer.borderWidth = 1
+        //titleTextField.layer.borderColor = borderColor.cgColor
     }
 }
 

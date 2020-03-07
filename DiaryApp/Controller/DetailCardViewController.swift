@@ -18,10 +18,11 @@ class DetailCardViewController: UIViewController {
     var indexPath: Int!
     
     override func viewWillAppear(_ animated: Bool) {
-        cardContent.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
-       //cardTitle.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
-        cardDate.text = CardManager.shared.getCardFromList(indexPath).getCardDate()
-        cardImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
+        let card = CardManager.shared.getCardFromList(indexPath)
+        cardContent.text = card.getCardContent()
+        cardDate.text = card.getCardDate()
+        cardImage.image = card.getCardImage()
+        //cardTitle.text = card.getCardTitle()
     }
     
     @IBAction func moreButtonPressed(_ sender: Any) {
@@ -37,8 +38,7 @@ class DetailCardViewController: UIViewController {
             self.navigationController?.popViewController(animated: false)
         }
         
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
-        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         
         alert.addAction(editAction)
         alert.addAction(deleteAction)
@@ -46,14 +46,14 @@ class DetailCardViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "EditCard" {
             return
-        } else {
-            if let EditCard = segue.destination as? AddCardViewController {
-                EditCard.indexPath = indexPath
-            }
+        }
+        
+        if let editCard = segue.destination as? AddCardViewController {
+            editCard.indexPath = indexPath
         }
     }
     

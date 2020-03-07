@@ -9,11 +9,50 @@
 import UIKit
 import RealmSwift
 
+class RealmUtility<T: Object> {
+    
+    private var realm = try! Realm()
+    
+    func all() -> Results<T> {
+        return realm.objects(T.self)
+    }
+    
+    func save(_ object: T) {
+        do {
+            try realm.write {
+                realm.add(object)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func delete(_ object: T) {
+        do {
+            try realm.write {
+                realm.delete(object)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func edit(process: () -> ()) {
+        do {
+            try realm.write {
+                process()
+            }
+        } catch {
+            print(error)
+        }
+    }
+}
+
 class CardManager {
     
     static let shared = CardManager()
     
-    private var realm = try! Realm()
+    private let realmUtility = RealmUtility<Card>()
     
     private var cardList: Results<Card>?
     
@@ -24,47 +63,27 @@ class CardManager {
     }
     
     private init() {
-        cardList = realm.objects(Card.self).sorted(byKeyPath: "date", ascending: false)
+        cardList = realmUtility.all().sorted(byKeyPath: "date", ascending: false)
     }
     
     func getCardFromList(_ at: Int) -> Card {
         return cardList![at]
     }
     
-    func save<T: Object>(_ object: T) {
-        do {
-            try realm.write {
-                realm.add(object)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func delete<T: Object>(_ object: T) {
-        do {
-            try realm.write {
-                realm.delete(object)
-            }
-        } catch {
-            print(error)
-        }
+    func delete(_ object: Card) {
+        realmUtility.delete(object)
     }
     
     func addNewCard(_ content: String, _ image: UIImage) {
         let newCard = Card(content, image)
-        save(newCard)
+        realmUtility.save(newCard)
     }
     
     func editCardByIndex(_ content: String, _ image: UIImage , at: Int ) {
-        do {
-            try realm.write {
-                cardList![at].content = content
-                //cardList![at].title = title
-                cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
-            }
-        } catch {
-            print(error)
+        realmUtility.edit {
+            cardList![at].content = content
+            //cardList![at].title = title
+            cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
         }
     }
 }
