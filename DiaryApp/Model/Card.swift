@@ -23,9 +23,9 @@ class Card: Object {
         self.image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
     }
     
-//    func getCardTitle() -> String {
-//        return title
-//    }
+    //    func getCardTitle() -> String {
+    //        return title
+    //    }
     
     func getCardContent() -> String {
         return content
@@ -37,11 +37,11 @@ class Card: Object {
         return dateFormatter.string(from: date)
     }
     
-    func getCardImage() -> UIImage {
-        var cardImage = UIImage()
+    func getCardImage() -> UIImage? {
         if let imageData = UIImage(data: image as Data) {
-            cardImage = imageData
+            return imageData
+        } else {
+            return nil
         }
-        return cardImage
     }
 }

@@ -9,29 +9,15 @@
 import UIKit
 import RealmSwift
 
-class CardManager {
-    
-    static let shared = CardManager()
+class RealmUtility<T: Object> {
     
     private var realm = try! Realm()
     
-    private var cardList: Results<Card>?
-    
-    var cardListCount: Int {
-        get {
-            cardList?.count ?? 0
-        }
+    func all() -> Results<T> {
+        return realm.objects(T.self)
     }
     
-    private init() {
-        cardList = realm.objects(Card.self).sorted(byKeyPath: "date", ascending: false)
-    }
-    
-    func getCardFromList(_ at: Int) -> Card {
-        return cardList![at]
-    }
-    
-    func save<T: Object>(_ object: T) {
+    func save(_ object: T) {
         do {
             try realm.write {
                 realm.add(object)
@@ -41,7 +27,7 @@ class CardManager {
         }
     }
     
-    func delete<T: Object>(_ object: T) {
+    func delete(_ object: T) {
         do {
             try realm.write {
                 realm.delete(object)
@@ -51,20 +37,51 @@ class CardManager {
         }
     }
     
-    func addNewCard(_ content: String, _ image: UIImage) {
-        let newCard = Card(content, image)
-        save(newCard)
-    }
-    
-    func editCardByIndex(_ content: String, _ image: UIImage , at: Int ) {
+    func edit(process: () -> Void) {
         do {
             try realm.write {
-                cardList![at].content = content
-                //cardList![at].title = title
-                cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
+                process()
             }
         } catch {
             print(error)
+        }
+    }
+}
+
+class CardManager {
+    
+    static let shared = CardManager()
+    
+    private let realmUtility = RealmUtility<Card>()
+    
+    private var cardList: Results<Card>?
+    
+    var cardListCount: Int {
+        cardList?.count ?? 0
+    }
+    
+    private init() {
+        cardList = realmUtility.all().sorted(byKeyPath: "date", ascending: false)
+    }
+    
+    func getCardFromList(_ at: Int) -> Card {
+        return cardList![at]
+    }
+    
+    func delete(_ object: Card) {
+        realmUtility.delete(object)
+    }
+    
+    func addNewCard(_ content: String, _ image: UIImage) {
+        let newCard = Card(content, image)
+        realmUtility.save(newCard)
+    }
+    
+    func editCardByIndex(_ content: String, _ image: UIImage, at: Int ) {
+        realmUtility.edit {
+            cardList![at].content = content
+            //cardList![at].title = title
+            cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
         }
     }
 }

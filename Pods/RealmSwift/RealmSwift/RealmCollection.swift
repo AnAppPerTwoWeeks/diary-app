@@ -261,7 +261,6 @@ public protocol RealmCollection: RealmCollectionBase, _RealmCollectionEnumerator
     /// A human-readable description of the objects contained in the collection.
     var description: String { get }
 
-
     // MARK: Index Retrieval
 
     /**
@@ -285,7 +284,6 @@ public protocol RealmCollection: RealmCollectionBase, _RealmCollectionEnumerator
      */
     func index(matching predicateFormat: String, _ args: Any...) -> Int?
 
-
     // MARK: Filtering
 
     /**
@@ -301,7 +299,6 @@ public protocol RealmCollection: RealmCollectionBase, _RealmCollectionEnumerator
      - parameter predicate: The predicate to use to filter the objects.
      */
     func filter(_ predicate: NSPredicate) -> Results<Element>
-
 
     // MARK: Sorting
 
@@ -372,7 +369,6 @@ public protocol RealmCollection: RealmCollectionBase, _RealmCollectionEnumerator
      - parameter property: The name of a property whose values should be summed.
      */
     func average(ofProperty property: String) -> Double?
-
 
     // MARK: Key-Value Coding
 
@@ -478,7 +474,6 @@ extension Optional: OptionalProtocol {
     // swiftlint:disable:next identifier_name
     public func _rlmInferWrappedType() -> Wrapped { return self! }
 }
-
 
 public extension RealmCollection where Element: MinMaxType {
     /**
@@ -616,7 +611,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
     override var count: Int { return base.count }
     override var description: String { return base.description }
 
-
     // MARK: Index Retrieval
 
     override func index(of object: C.Element) -> Int? { return base.index(of: object) }
@@ -646,7 +640,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
         return base.sorted(by: sortDescriptors)
     }
 
-
     // MARK: Aggregate Operations
 
     override func min<T: MinMaxType>(ofProperty property: String) -> T? {
@@ -664,7 +657,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
     override func average(ofProperty property: String) -> Double? {
         return base.average(ofProperty: property)
     }
-
 
     // MARK: Sequence Support
 
@@ -693,7 +685,6 @@ private final class _AnyRealmCollection<C: RealmCollection>: _AnyRealmCollection
         // FIXME: it should be possible to avoid this force-casting
         return base.endIndex as! Int
     }
-
 
     // MARK: Key-Value Coding
 
@@ -764,7 +755,6 @@ public struct AnyRealmCollection<Element: RealmCollectionValue>: RealmCollection
     /// A human-readable description of the objects contained in the collection.
     public var description: String { return base.description }
 
-
     // MARK: Index Retrieval
 
     /**
@@ -810,7 +800,6 @@ public struct AnyRealmCollection<Element: RealmCollectionValue>: RealmCollection
      */
     public func filter(_ predicate: NSPredicate) -> Results<Element> { return base.filter(predicate) }
 
-
     // MARK: Sorting
 
     /**
@@ -844,7 +833,6 @@ public struct AnyRealmCollection<Element: RealmCollectionValue>: RealmCollection
         where S.Iterator.Element == SortDescriptor {
         return base.sorted(by: sortDescriptors)
     }
-
 
     // MARK: Aggregate Operations
 
@@ -891,7 +879,6 @@ public struct AnyRealmCollection<Element: RealmCollectionValue>: RealmCollection
      */
     public func average(ofProperty property: String) -> Double? { return base.average(ofProperty: property) }
 
-
     // MARK: Sequence Support
 
     /**
@@ -908,7 +895,6 @@ public struct AnyRealmCollection<Element: RealmCollectionValue>: RealmCollection
     // swiftlint:disable:next identifier_name
     public func _asNSFastEnumerator() -> Any { return base._asNSFastEnumerator() }
 
-
     // MARK: Collection Support
 
     /// The position of the first element in a non-empty collection.
@@ -919,7 +905,6 @@ public struct AnyRealmCollection<Element: RealmCollectionValue>: RealmCollection
     /// endIndex is not a valid argument to subscript, and is always reachable from startIndex by
     /// zero or more applications of successor().
     public var endIndex: Int { return base.endIndex }
-
 
     // MARK: Key-Value Coding
 

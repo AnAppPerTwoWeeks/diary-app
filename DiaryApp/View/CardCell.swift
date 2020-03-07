@@ -14,7 +14,7 @@ class CardCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var date: UILabel!
-
+    
     override func layoutSubviews() {
         // cell rounded section
         self.layer.cornerRadius = 15.0
