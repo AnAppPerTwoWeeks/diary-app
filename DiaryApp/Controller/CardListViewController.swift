@@ -15,23 +15,23 @@ enum CellIndexType: Int {
 }
 
 class CardListViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cardViewImage: UIBarButtonItem!
     @IBOutlet weak var listViewImage: UIBarButtonItem!
-
+    
     var cellIndex = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         setupNavBarAndTabBarUI()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
     }
-
+    
     func setupNavBarAndTabBarUI() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -41,7 +41,7 @@ class CardListViewController: UIViewController {
         self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
         self.cardViewImage.image = UIImage(named: "cardView_selected")
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "DetailCard" {
             return
@@ -53,14 +53,14 @@ class CardListViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func cardViewButtonPressed(_ sender: Any) {
         cellIndex = 0
         cardViewImage.image = UIImage(named: "cardView_selected")
         listViewImage.image = UIImage(named: "listView_unselected")
         collectionView.reloadData()
-    }
-
+    }  
+    
     @IBAction func listViewButtonPressed(_ sender: Any) {
         cellIndex = 1
         cardViewImage.image = UIImage(named: "cardView_unselected")
@@ -91,7 +91,7 @@ extension CardListViewController: UICollectionViewDataSource, UICollectionViewDe
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "DetailCard", sender: indexPath.row)
     }
