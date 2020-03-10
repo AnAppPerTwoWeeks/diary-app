@@ -15,15 +15,8 @@ class AddCardViewController: UIViewController {
     // @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
-    
-    
     @IBOutlet weak var inputTextView: UIView!
-    
-    
-    
-    
-    
-    
+
     let imagePicker = UIImagePickerController()
     
     var indexPath: Int!
