@@ -21,7 +21,7 @@ class SettingsTableViewController: UITableViewController {
         biometricSwitch.isOn = UserDefaults.standard.bool(forKey: "biometricState")
         biometricLabel.text = "Face ID / Touch ID"
         openSourceLicenseLabel.text = "오픈소스 라이브러리"
-        
+        AdmobController.setupBannerView(toViewController: self)
     }
     
     @IBAction func toggleBiometricActivation(_ sender: Any) {

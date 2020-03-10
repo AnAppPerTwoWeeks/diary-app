@@ -25,6 +25,7 @@ class CardListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBarAndTabBarUI()
+        AdmobController.setupBannerView(toViewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

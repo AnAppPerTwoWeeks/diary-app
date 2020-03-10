@@ -17,6 +17,7 @@ class AuthViewController: UIViewController {
         } else {
             activateAuthentication()
         }
+        AdmobController.setupBannerView(toViewController: self)
     }
     
     func activateAuthentication() {
