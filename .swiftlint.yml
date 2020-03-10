@@ -4,6 +4,7 @@ disabled_rules:
 - identifier_name
 - unused_optional_binding
 - trailing_whitespace
+- vertical_whitespace
 
 opt_in_rules:
 - indentation_width

@@ -104,17 +104,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-JU-sU9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="400"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Imv-71-3tE"/>
                                                         <constraint firstAttribute="width" constant="100" id="cBF-Vx-IY8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bum-rj-TqT">
-                                                    <rect key="frame" x="100" y="0.0" width="200" height="100"/>
+                                                    <rect key="frame" x="100" y="0.0" width="200" height="400"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-cK-aB6">
-                                                            <rect key="frame" x="8" y="31" width="184" height="61"/>
+                                                            <rect key="frame" x="8" y="31" width="184" height="361"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Content">
                                                                     <attributes>
@@ -283,6 +283,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="F0X-YG-bOM" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9Lc-cR-YAJ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9iy-PG-I7s">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -293,13 +294,13 @@
                         <outlet property="delegate" destination="aIp-WZ-uC5" id="3qa-G0-2qI"/>
                         <segue destination="aUQ-pR-BXB" kind="relationship" relationship="viewControllers" id="6Id-AH-STe"/>
                         <segue destination="A2Y-jm-Gif" kind="relationship" relationship="viewControllers" id="SzS-Fe-Rbl"/>
-                        <segue destination="eep-hl-KZn" kind="relationship" relationship="viewControllers" id="2rb-dT-4es"/>
+                        <segue destination="TNh-Cb-yox" kind="relationship" relationship="viewControllers" id="P4B-ZV-TSx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uva-aI-OSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <customObject id="aIp-WZ-uC5" customClass="RootTabBarController" customModule="DiaryApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="22" y="128"/>
+            <point key="canvasLocation" x="-97" y="40"/>
         </scene>
         <!--Add Card View Controller-->
         <scene sceneID="7t4-JP-Nte">
@@ -310,43 +311,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPk-pA-oSx">
-                                <rect key="frame" x="57" y="74" width="300" height="400"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="kfo-lm-KK0"/>
+                                    <constraint firstAttribute="height" constant="450" id="vtz-oF-Fea"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해주세요." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1F-GD-3Dk">
-                                <rect key="frame" x="57" y="507" width="300" height="36"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b57-5w-IxU">
+                                <rect key="frame" x="0.0" y="773" width="414" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해주세요." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1F-GD-3Dk">
+                                        <rect key="frame" x="40" y="0.0" width="328" height="40"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3M-e1-qVX">
+                                        <rect key="frame" x="376" y="5" width="30" height="30"/>
+                                        <state key="normal" title="작성"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFP-tK-Qj8">
+                                        <rect key="frame" x="8" y="10" width="24" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="0uV-xT-HxL"/>
+                                            <constraint firstAttribute="height" constant="20" id="eC7-vc-Tlg"/>
+                                        </constraints>
+                                        <state key="normal" image="photo" catalog="system">
+                                            <color key="titleColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPhotoPressed:" destination="A2Y-jm-Gif" eventType="touchUpInside" id="Ula-FT-Hy8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="qpZ-wa-K8S"/>
+                                    <constraint firstItem="V1F-GD-3Dk" firstAttribute="leading" secondItem="QFP-tK-Qj8" secondAttribute="trailing" constant="8" id="1Jz-dU-8tc"/>
+                                    <constraint firstItem="V1F-GD-3Dk" firstAttribute="leading" secondItem="QFP-tK-Qj8" secondAttribute="trailing" constant="8" id="Bgy-VI-jm0"/>
+                                    <constraint firstAttribute="trailing" secondItem="T3M-e1-qVX" secondAttribute="trailing" constant="8" id="Geb-Cm-dGo"/>
+                                    <constraint firstItem="T3M-e1-qVX" firstAttribute="leading" secondItem="V1F-GD-3Dk" secondAttribute="trailing" constant="8" id="KYX-3k-Hdq"/>
+                                    <constraint firstAttribute="bottom" secondItem="QFP-tK-Qj8" secondAttribute="bottom" constant="10" id="Mpf-97-rWk"/>
+                                    <constraint firstItem="V1F-GD-3Dk" firstAttribute="top" secondItem="b57-5w-IxU" secondAttribute="top" id="U2R-Lb-TGj"/>
+                                    <constraint firstItem="T3M-e1-qVX" firstAttribute="leading" secondItem="V1F-GD-3Dk" secondAttribute="trailing" constant="8" id="dfa-Tu-PeX"/>
+                                    <constraint firstItem="QFP-tK-Qj8" firstAttribute="leading" secondItem="b57-5w-IxU" secondAttribute="leading" constant="8" id="gNq-xX-yTg"/>
+                                    <constraint firstAttribute="bottom" secondItem="T3M-e1-qVX" secondAttribute="bottom" constant="5" id="jTh-Hb-2dz"/>
+                                    <constraint firstItem="QFP-tK-Qj8" firstAttribute="top" secondItem="b57-5w-IxU" secondAttribute="top" constant="10" id="jsZ-ZO-PKL"/>
+                                    <constraint firstAttribute="height" constant="40" id="qCc-BC-5oc"/>
+                                    <constraint firstAttribute="bottom" secondItem="V1F-GD-3Dk" secondAttribute="bottom" id="qTg-Z1-m3o"/>
+                                    <constraint firstItem="T3M-e1-qVX" firstAttribute="top" secondItem="b57-5w-IxU" secondAttribute="top" constant="5" id="xPP-rR-o7l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFP-tK-Qj8">
-                                <rect key="frame" x="195" y="482" width="24" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="0uV-xT-HxL"/>
-                                    <constraint firstAttribute="height" constant="20" id="eC7-vc-Tlg"/>
-                                </constraints>
-                                <state key="normal" image="photo" catalog="system">
-                                    <color key="titleColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="addPhotoPressed:" destination="A2Y-jm-Gif" eventType="touchUpInside" id="Ula-FT-Hy8"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="V1F-GD-3Dk" firstAttribute="top" secondItem="QFP-tK-Qj8" secondAttribute="bottom" constant="5" id="3Ec-DO-f3w"/>
-                            <constraint firstItem="QFP-tK-Qj8" firstAttribute="top" secondItem="dPk-pA-oSx" secondAttribute="bottom" constant="8" id="Cud-q4-3DY"/>
-                            <constraint firstItem="dPk-pA-oSx" firstAttribute="top" secondItem="673-EJ-oid" secondAttribute="top" constant="30" id="Hxw-zS-VoJ"/>
-                            <constraint firstItem="673-EJ-oid" firstAttribute="trailing" secondItem="dPk-pA-oSx" secondAttribute="trailing" constant="57" id="RST-Sp-AAs"/>
-                            <constraint firstItem="dPk-pA-oSx" firstAttribute="leading" secondItem="673-EJ-oid" secondAttribute="leading" constant="57" id="c0P-V0-1P2"/>
-                            <constraint firstItem="V1F-GD-3Dk" firstAttribute="leading" secondItem="673-EJ-oid" secondAttribute="leading" constant="57" id="c3Q-Va-bvM"/>
-                            <constraint firstItem="QFP-tK-Qj8" firstAttribute="centerX" secondItem="Xu0-A8-SHr" secondAttribute="centerX" id="c5U-yE-2ZC"/>
-                            <constraint firstItem="673-EJ-oid" firstAttribute="trailing" secondItem="V1F-GD-3Dk" secondAttribute="trailing" constant="57" id="llB-3I-svw"/>
+                            <constraint firstItem="b57-5w-IxU" firstAttribute="leading" secondItem="673-EJ-oid" secondAttribute="leading" id="5hX-Z8-YnD"/>
+                            <constraint firstItem="dPk-pA-oSx" firstAttribute="leading" secondItem="673-EJ-oid" secondAttribute="leading" id="9Bp-9C-PUc"/>
+                            <constraint firstItem="dPk-pA-oSx" firstAttribute="top" secondItem="673-EJ-oid" secondAttribute="top" id="BbH-f9-dmH"/>
+                            <constraint firstItem="dPk-pA-oSx" firstAttribute="trailing" secondItem="673-EJ-oid" secondAttribute="trailing" id="cxZ-8U-Gqa"/>
+                            <constraint firstItem="b57-5w-IxU" firstAttribute="centerX" secondItem="Xu0-A8-SHr" secondAttribute="centerX" id="lj5-ru-kYU"/>
+                            <constraint firstItem="b57-5w-IxU" firstAttribute="bottom" secondItem="673-EJ-oid" secondAttribute="bottom" id="q4f-Zn-NkV"/>
+                            <constraint firstItem="b57-5w-IxU" firstAttribute="trailing" secondItem="673-EJ-oid" secondAttribute="trailing" id="uIc-5T-mD5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="673-EJ-oid"/>
                     </view>
@@ -367,30 +389,152 @@
                     <connections>
                         <outlet property="addButton" destination="QFP-tK-Qj8" id="o5K-Wa-buh"/>
                         <outlet property="contentTextField" destination="V1F-GD-3Dk" id="jfy-hl-dz1"/>
+                        <outlet property="inputTextView" destination="b57-5w-IxU" id="ycw-5c-nd2"/>
                         <outlet property="photoImage" destination="dPk-pA-oSx" id="Rmy-hO-6za"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMv-IM-x2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="915"/>
+            <point key="canvasLocation" x="856.52173913043487" y="914.73214285714278"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="vv1-DP-h6r">
+        <!--Settings Table View Controller-->
+        <scene sceneID="icb-aI-LBw">
             <objects>
-                <viewController id="eep-hl-KZn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xa1-1i-bUX">
+                <tableViewController id="3fg-K0-JLz" customClass="SettingsTableViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gPa-e8-2Ua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="kRx-Ts-61x"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="settings_unselected" selectedImage="settings_selected" id="4zt-W7-ciK">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aAv-RI-xcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="보안" id="kZn-Wi-UP0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Hgp-fy-N1r">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hgp-fy-N1r" id="cly-GH-Vgh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ub-PM-uKB">
+                                                    <rect key="frame" x="20" y="11" width="200" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o57-B4-rdj">
+                                                    <rect key="frame" x="345" y="6" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="정보" id="zIY-OZ-fjt">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5zS-hA-Es9">
+                                        <rect key="frame" x="0.0" y="155" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5zS-hA-Es9" id="p8d-WA-wFO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7k-ji-vOW">
+                                                    <rect key="frame" x="20" y="11" width="199" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="WJi-9o-hd1" kind="show" id="YUw-HO-jCD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="3fg-K0-JLz" id="lmJ-7K-mIs"/>
+                            <outlet property="delegate" destination="3fg-K0-JLz" id="j4a-Nn-7XC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="xNp-nv-4bq"/>
+                    <connections>
+                        <outlet property="biometricLabel" destination="0ub-PM-uKB" id="ggy-fd-KMs"/>
+                        <outlet property="biometricSwitch" destination="o57-B4-rdj" id="wbP-Y4-Ywe"/>
+                        <outlet property="openSourceLicenseLabel" destination="K7k-ji-vOW" id="306-UK-1LV"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p94-LC-jK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="915"/>
+            <point key="canvasLocation" x="2518.840579710145" y="914.73214285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5s3-6q-xTx">
+            <objects>
+                <viewController id="WJi-9o-hd1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9cb-VA-G5j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-cG-YSC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Realm Swift
+Copyright (c) 2011-2017 Realm Inc
+https://github.com/realm
+Apache License 2.0
+
+SwiftLint
+Copyright (c) 2020 Realm Inc.
+https://github.com/realm/SwiftLint
+The MIT License (MIT)
+
+FSCalendar
+Copyright (c) 2013-2016 FSCalendar
+https://github.com/WenchaoD/FSCalendar
+The MIT License (MIT)
+
+=========
+                                   Apache License                             Version 2.0, January 2004                          http://www.apache.org/licenses/        TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION        1. Definitions.           "License" shall mean the terms and conditions for use, reproduction,        and distribution as defined by Sections 1 through 9 of this document.           "Licensor" shall mean the copyright owner or entity authorized by        the copyright owner that is granting the License.           "Legal Entity" shall mean the union of the acting entity and all        other entities that control, are controlled by, or are under common        control with that entity. For the purposes of this definition,        "control" means (i) the power, direct or indirect, to cause the        direction or management of such entity, whether by contract or        otherwise, or (ii) ownership of fifty percent (50%) or more of the        outstanding shares, or (iii) beneficial ownership of such entity.           "You" (or "Your") shall mean an individual or Legal Entity        exercising permissions granted by this License.           "Source" form shall mean the preferred form for making modifications,        including but not limited to software source code, documentation        source, and configuration files.           "Object" form shall mean any form resulting from mechanical        transformation or translation of a Source form, including but        not limited to compiled object code, generated documentation,        and conversions to other media types.           "Work" shall mean the work of authorship, whether in Source or        Object form, made available under the License, as indicated by a        copyright notice that is included in or attached to the work        (an example is provided in the Appendix below).           "Derivative Works" shall mean any work, whether in Source or Object        form, that is based on (or derived from) the Work and for which the        editorial revisions, annotations, elaborations, or other modifications        represent, as a whole, an original work of authorship. For the purposes        of this License, Derivative Works shall not include works that remain        separable from, or merely link (or bind by name) to the interfaces of,        the Work and Derivative Works thereof.           "Contribution" shall mean any work of authorship, including        the original version of the Work and any modifications or additions        to that Work or Derivative Works thereof, that is intentionally        submitted to Licensor for inclusion in the Work by the copyright owner        or by an individual or Legal Entity authorized to submit on behalf of        the copyright owner. For the purposes of this definition, "submitted"        means any form of electronic, verbal, or written communication sent        to the Licensor or its representatives, including but not limited to        communication on electronic mailing lists, source code control systems,        and issue tracking systems that are managed by, or on behalf of, the        Licensor for the purpose of discussing and improving the Work, but        excluding communication that is conspicuously marked or otherwise        designated in writing by the copyright owner as "Not a Contribution."           "Contributor" shall mean Licensor and any individual or Legal Entity        on behalf of whom a Contribution has been received by Licensor and        subsequently incorporated within the Work.        2. Grant of Copyright License. Subject to the terms and conditions of        this License, each Contributor hereby grants to You a perpetual,        worldwide, non-exclusive, no-charge, royalty-free, irrevocable        copyright license to reproduce, prepare Derivative Works of,        publicly display, publicly perform, sublicense, and distribute the        Work and such Derivative Works in Source or Object form.        3. Grant of Patent License. Subject to the terms and conditions of        this License, each Contributor hereby grants to You a perpetual,        worldwide, non-exclusive, no-charge, royalty-free, irrevocable        (except as stated in this section) patent license to make, have made,        use, offer to sell, sell, import, and otherwise transfer the Work,        where such license applies only to those patent claims licensable        by such Contributor that are necessarily infringed by their        Contribution(s) alone or by combination of their Contribution(s)        with the Work to which such Contribution(s) was submitted. If You        institute patent litigation against any entity (including a        cross-claim or counterclaim in a lawsuit) alleging that the Work        or a Contribution incorporated within the Work constitutes direct        or contributory patent infringement, then any patent licenses        granted to You under this License for that Work shall terminate        as of the date such litigation is filed.        4. Redistribution. You may reproduce and distribute copies of the        Work or Derivative Works thereof in any medium, with or without        modifications, and in Source or Object form, provided that You        meet the following conditions:           (a) You must give any other recipients of the Work or            Derivative Works a copy of this License; and           (b) You must cause any modified files to carry prominent notices            stating that You changed the files; and           (c) You must retain, in the Source form of any Derivative Works            that You distribute, all copyright, patent, trademark, and            attribution notices from the Source form of the Work,            excluding those notices that do not pertain to any part of            the Derivative Works; and           (d) If the Work includes a "NOTICE" text file as part of its            distribution, then any Derivative Works that You distribute must            include a readable copy of the attribution notices contained            within such NOTICE file, excluding those notices that do not            pertain to any part of the Derivative Works, in at least one            of the following places: within a NOTICE text file distributed            as part of the Derivative Works; within the Source form or            documentation, if provided along with the Derivative Works; or,            within a display generated by the Derivative Works, if and            wherever such third-party notices normally appear. The contents            of the NOTICE file are for informational purposes only and            do not modify the License. You may add Your own attribution            notices within Derivative Works that You distribute, alongside            or as an addendum to the NOTICE text from the Work, provided            that such additional attribution notices cannot be construed            as modifying the License.           You may add Your own copyright statement to Your modifications and        may provide additional or different license terms and conditions        for use, reproduction, or distribution of Your modifications, or        for any such Derivative Works as a whole, provided Your use,        reproduction, and distribution of the Work otherwise complies with        the conditions stated in this License.        5. Submission of Contributions. Unless You explicitly state otherwise,        any Contribution intentionally submitted for inclusion in the Work        by You to the Licensor shall be under the terms and conditions of        this License, without any additional terms or conditions.        Notwithstanding the above, nothing herein shall supersede or modify        the terms of any separate license agreement you may have executed        with Licensor regarding such Contributions.        6. Trademarks. This License does not grant permission to use the trade        names, trademarks, service marks, or product names of the Licensor,        except as required for reasonable and customary use in describing the        origin of the Work and reproducing the content of the NOTICE file.        7. Disclaimer of Warranty. Unless required by applicable law or        agreed to in writing, Licensor provides the Work (and each        Contributor provides its Contributions) on an "AS IS" BASIS,        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or        implied, including, without limitation, any warranties or conditions        of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A        PARTICULAR PURPOSE. You are solely responsible for determining the        appropriateness of using or redistributing the Work and assume any        risks associated with Your exercise of permissions under this License.        8. Limitation of Liability. In no event and under no legal theory,        whether in tort (including negligence), contract, or otherwise,        unless required by applicable law (such as deliberate and grossly        negligent acts) or agreed to in writing, shall any Contributor be        liable to You for damages, including any direct, indirect, special,        incidental, or consequential damages of any character arising as a        result of this License or out of the use or inability to use the        Work (including but not limited to damages for loss of goodwill,        work stoppage, computer failure or malfunction, or any and all        other commercial damages or losses), even if such Contributor        has been advised of the possibility of such damages.        9. Accepting Warranty or Additional Liability. While redistributing        the Work or Derivative Works thereof, You may choose to offer,        and charge a fee for, acceptance of support, warranty, indemnity,        or other liability obligations and/or rights consistent with this        License. However, in accepting such obligations, You may act only        on Your own behalf and on Your sole responsibility, not on behalf        of any other Contributor, and only if You agree to indemnify,        defend, and hold each Contributor harmless for any liability        incurred by, or claims asserted against, such Contributor by reason        of your accepting any such warranty or additional liability.    
+
+------------------------------------------------------------------------------
+
+
+
+
+The MIT License
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+
+
+</string>
+                                <color key="textColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qCA-6W-TCJ" firstAttribute="trailing" secondItem="i7a-cG-YSC" secondAttribute="trailing" id="jeh-5j-6LQ"/>
+                            <constraint firstItem="i7a-cG-YSC" firstAttribute="top" secondItem="qCA-6W-TCJ" secondAttribute="top" id="mrg-6C-TKg"/>
+                            <constraint firstItem="i7a-cG-YSC" firstAttribute="leading" secondItem="qCA-6W-TCJ" secondAttribute="leading" id="nUo-fd-dN4"/>
+                            <constraint firstItem="qCA-6W-TCJ" firstAttribute="bottom" secondItem="i7a-cG-YSC" secondAttribute="bottom" id="peg-ZF-mP7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qCA-6W-TCJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h36-4P-GdV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSj-Bt-ySq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3286.9565217391305" y="914.73214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SY6-vD-QcZ">
@@ -412,7 +556,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N8-cW-rJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1267" y="916"/>
+            <point key="canvasLocation" x="-1277" y="915"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SfE-MS-rt9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TNh-Cb-yox" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="settings_unselected" selectedImage="settings_selected" id="Z5M-7y-u2o"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PKb-OF-ukr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3fg-K0-JLz" kind="relationship" relationship="rootViewController" id="Fk3-CC-Zu3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBU-6m-U4C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.6956521739132" y="914.73214285714278"/>
         </scene>
     </scenes>
     <resources>
