@@ -8,4 +8,5 @@ target 'DiaryApp' do
   # Pods for DiaryApp
 pod 'RealmSwift'
 pod 'SwiftLint'
+pod 'Google-Mobile-Ads-SDK'
 end

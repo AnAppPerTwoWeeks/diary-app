@@ -24,6 +24,7 @@
 		D3C4DBF2240798A7002D7743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C4DBF0240798A7002D7743 /* LaunchScreen.storyboard */; };
 		D3C6CCC52412A75400F889B3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6CCC42412A75400F889B3 /* RootTabBarController.swift */; };
 		D3D7298E241521B200AC1924 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7298D241521B200AC1924 /* SettingsTableViewController.swift */; };
+		D3F907272417F5780066A8A3 /* AdmobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F907262417F5780066A8A3 /* AdmobController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D3C4DBF3240798A7002D7743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C6CCC42412A75400F889B3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		D3D7298D241521B200AC1924 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D3F907262417F5780066A8A3 /* AdmobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobController.swift; sourceTree = "<group>"; };
 		EB78EE4593037BE4BF349C16 /* Pods_DiaryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiaryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */,
 				D311331B240AD7FB00BD9232 /* AddCardViewController.swift */,
 				D3D7298D241521B200AC1924 /* SettingsTableViewController.swift */,
+				D3F907262417F5780066A8A3 /* AdmobController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				D333CEF7240CF36100BDD95E /* DetailCardViewController.swift in Sources */,
 				D3C4DBE8240798A6002D7743 /* SceneDelegate.swift in Sources */,
 				D30B1706240A2191008CDD7F /* Card.swift in Sources */,
+				D3F907272417F5780066A8A3 /* AdmobController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
