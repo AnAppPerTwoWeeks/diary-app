@@ -16,6 +16,14 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
     
+    
+    @IBOutlet weak var inputTextView: UIView!
+    
+    
+    
+    
+    
+    
     let imagePicker = UIImagePickerController()
     
     var indexPath: Int!
@@ -25,7 +33,6 @@ class AddCardViewController: UIViewController {
         imagePicker.delegate = self
         contentTextField.delegate = self
         //titleTextField.delegate = self
-        
         setupTextFieldUI()
         setupKeyboardEventListner()
         
@@ -62,9 +69,9 @@ class AddCardViewController: UIViewController {
     func checkSegueType() {
         if let currentNavigationController = navigationController {
             currentNavigationController.popToRootViewController(animated: true)
-        } else {
-            dismiss(animated: true, completion: nil)
         }
+        dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func submitButtonPressed(_ sender: Any) {
@@ -129,9 +136,10 @@ extension AddCardViewController: UITextFieldDelegate {
         }
         
         if (notification.name == UIResponder.keyboardWillShowNotification) || (notification.name == UIResponder.keyboardWillChangeFrameNotification) {
-            view.frame.origin.y = -keyboardRect.height
+            inputTextView.frame.origin.y = -keyboardRect.height
+            
         } else {
-            view.frame.origin.y = 0
+            inputTextView.frame.origin.y = -90
         }
     }
     
