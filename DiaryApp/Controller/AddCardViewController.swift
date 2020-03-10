@@ -71,9 +71,9 @@ class AddCardViewController: UIViewController {
             currentNavigationController.popToRootViewController(animated: true)
         }
         dismiss(animated: true, completion: nil)
-
-    }
         
+    }
+    
     @IBAction func submitButtonPressed(_ sender: Any) {
         if photoImage.image == nil {
             alertIfFieldIsEmpty(message: "사진을 추가해주세요.")
@@ -137,7 +137,7 @@ extension AddCardViewController: UITextFieldDelegate {
         
         if (notification.name == UIResponder.keyboardWillShowNotification) || (notification.name == UIResponder.keyboardWillChangeFrameNotification) {
             inputTextView.frame.origin.y = -keyboardRect.height
-
+            
         } else {
             inputTextView.frame.origin.y = -90
         }

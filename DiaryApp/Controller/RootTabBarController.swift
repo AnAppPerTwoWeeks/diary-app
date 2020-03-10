@@ -10,10 +10,6 @@ import UIKit
 
 class RootTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
         if !(viewController is AddCardViewController) {
