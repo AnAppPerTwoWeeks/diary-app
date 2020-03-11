@@ -25,6 +25,7 @@ class AddCardViewController: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
         contentTextField.delegate = self
+        addPhotoLabel.text = "사진을 추가하거나 수정하려면 여기를 눌러주세요"
         setupKeyboardEventListner()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

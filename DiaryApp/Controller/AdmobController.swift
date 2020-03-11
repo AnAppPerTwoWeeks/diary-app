@@ -15,8 +15,9 @@ class AdmobController {
         let adSize = GADAdSizeFromCGSize(CGSize(width: viewController.view.frame.width, height: 50))
         let bannerView = GADBannerView(adSize: adSize)
         addBannerView(bannerView, toViewController: viewController)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-5869826399158816/3860128194"
         //실제 광고 단위 ca-app-pub-5869826399158816/3860128194
+        //테스트 단위 ca-app-pub-3940256099942544/2934735716
         bannerView.rootViewController = viewController
         bannerView.load(GADRequest())
     }
