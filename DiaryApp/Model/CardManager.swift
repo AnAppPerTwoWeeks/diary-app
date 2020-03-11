@@ -80,7 +80,6 @@ class CardManager {
     func editCardByIndex(_ content: String, _ image: UIImage, at: Int ) {
         realmUtility.edit {
             cardList![at].content = content
-            //cardList![at].title = title
             cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
         }
     }

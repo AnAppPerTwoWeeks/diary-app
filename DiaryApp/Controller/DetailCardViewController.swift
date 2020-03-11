@@ -22,8 +22,6 @@ class DetailCardViewController: UIViewController {
         cardContent.text = card.getCardContent()
         cardDate.text = card.getCardDate()
         cardImage.image = card.getCardImage()
-        //cardTitle.text = card.getCardTitle()
-        AdmobController.setupBannerView(toViewController: self)
     }
     
     @IBAction func moreButtonPressed(_ sender: Any) {

@@ -12,7 +12,6 @@ import RealmSwift
 class AddCardViewController: UIViewController {
     
     @IBOutlet weak var contentTextField: UITextField!
-    // @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
 
@@ -26,8 +25,6 @@ class AddCardViewController: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
         contentTextField.delegate = self
-        //titleTextField.delegate = self
-        setupTextFieldUI()
         setupKeyboardEventListner()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -38,7 +35,6 @@ class AddCardViewController: UIViewController {
             contentTextField.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
             photoImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
             addPhotoLabel.isHidden = true
-            //titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
         }
     }
     
@@ -122,8 +118,8 @@ extension AddCardViewController: UITextFieldDelegate {
         guard let stringRange = Range(range, in: currentText) else { return false }
         
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        leftCharacterCountLabel.text = "\(updatedText.count)/40"
-        return updatedText.count < 46
+        leftCharacterCountLabel.text = "\(updatedText.count)/50"
+        return updatedText.count < 50
     }
     
     
@@ -134,7 +130,6 @@ extension AddCardViewController: UITextFieldDelegate {
     
     func hideKeyboard() {
         contentTextField.resignFirstResponder()
-        //titleTextField.resignFirstResponder()
     }
     
     @objc func keyboardWillChange(notification: Notification) {
@@ -148,11 +143,5 @@ extension AddCardViewController: UITextFieldDelegate {
         } else {
             view.frame.origin.y = 0
         }
-    }
-    
-    func setupTextFieldUI() {
-        //contentTextField.borderStyle = .none
-        //contentTextField.placeholder = "내용을 입력해주세요"
-        //contentTextField.layer.borderColor = borderColor.cgColor
     }
 }
