@@ -15,8 +15,9 @@ class AddCardViewController: UIViewController {
     // @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var inputTextView: UIView!
 
+    @IBOutlet weak var leftCharacterCountLabel: UILabel!
+    @IBOutlet weak var addPhotoLabel: UILabel!
     let imagePicker = UIImagePickerController()
     
     var indexPath: Int!
@@ -33,8 +34,10 @@ class AddCardViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         if indexPath != nil {
+            
             contentTextField.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
             photoImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
+            addPhotoLabel.isHidden = true
             //titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
         }
     }
@@ -100,6 +103,7 @@ extension AddCardViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             photoImage.image = image
+            addPhotoLabel.isHidden = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -112,6 +116,16 @@ extension AddCardViewController: UIImagePickerControllerDelegate, UINavigationCo
 
 // MARK: - UITextFieldDelegate Mothods
 extension AddCardViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        leftCharacterCountLabel.text = "\(updatedText.count)/40"
+        return updatedText.count < 46
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hideKeyboard()
@@ -129,18 +143,16 @@ extension AddCardViewController: UITextFieldDelegate {
         }
         
         if (notification.name == UIResponder.keyboardWillShowNotification) || (notification.name == UIResponder.keyboardWillChangeFrameNotification) {
-            inputTextView.frame.origin.y = -keyboardRect.height
+            view.frame.origin.y = -keyboardRect.height
             
         } else {
-            inputTextView.frame.origin.y = -90
+            view.frame.origin.y = 0
         }
     }
     
     func setupTextFieldUI() {
-        let borderColor = UIColor.white
-        contentTextField.layer.borderWidth = 1
-        contentTextField.layer.borderColor = borderColor.cgColor
-        //        titleTextField.layer.borderWidth = 1
-        //titleTextField.layer.borderColor = borderColor.cgColor
+        //contentTextField.borderStyle = .none
+        //contentTextField.placeholder = "내용을 입력해주세요"
+        //contentTextField.layer.borderColor = borderColor.cgColor
     }
 }

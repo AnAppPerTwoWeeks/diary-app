@@ -21,7 +21,7 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var listViewImage: UIBarButtonItem!
     
     var cellIndex = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBarAndTabBarUI()
@@ -78,18 +78,27 @@ extension CardListViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         var cell = CardCell()
+
         
         if cellIndex == CellIndexType.cardView.rawValue {
             if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCell {
                 cell = reusableCell
             }
         } else {
-            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCardCell", for: indexPath) as? CardCell {
+            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as? CardCell {
                 cell = reusableCell
             }
         }
+        
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: 300, height: 100)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
