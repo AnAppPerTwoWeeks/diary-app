@@ -18,6 +18,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.title = "설정"
         biometricSwitch.isOn = UserDefaults.standard.bool(forKey: "biometricState")
         biometricLabel.text = "Face ID / Touch ID"
         openSourceLicenseLabel.text = "오픈소스 라이브러리"

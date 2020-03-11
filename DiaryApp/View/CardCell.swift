@@ -37,7 +37,6 @@ class CardCell: UICollectionViewCell {
     }
     
     func update(_ card: Card) {
-        //title.text = card.getCardTitle()
         content.text = card.getCardContent()
         date.text = card.getCardDate()
         image.image = card.getCardImage()

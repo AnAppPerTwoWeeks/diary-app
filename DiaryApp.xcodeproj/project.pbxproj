@@ -85,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				D3C6CCC42412A75400F889B3 /* RootTabBarController.swift */,
-				D3C4DBE9240798A6002D7743 /* CardListViewController.swift */,
 				D3B0551E2417948B008BE466 /* AuthViewController.swift */,
+				D3C4DBE9240798A6002D7743 /* CardListViewController.swift */,
 				D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */,
 				D311331B240AD7FB00BD9232 /* AddCardViewController.swift */,
 				D3D7298D241521B200AC1924 /* SettingsTableViewController.swift */,

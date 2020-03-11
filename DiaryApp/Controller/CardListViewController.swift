@@ -21,7 +21,7 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var listViewImage: UIBarButtonItem!
     
     var cellIndex = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBarAndTabBarUI()
@@ -39,7 +39,6 @@ class CardListViewController: UIViewController {
         self.tabBarController?.tabBar.clipsToBounds = true
         self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
         self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
-        self.cardViewImage.image = UIImage(named: "cardView_selected")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,7 +68,7 @@ class CardListViewController: UIViewController {
     }
 }
 
-extension CardListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CardListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return CardManager.shared.cardListCount
@@ -79,17 +78,28 @@ extension CardListViewController: UICollectionViewDataSource, UICollectionViewDe
         
         var cell = CardCell()
         
+        
         if cellIndex == CellIndexType.cardView.rawValue {
             if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCell {
                 cell = reusableCell
             }
         } else {
-            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCardCell", for: indexPath) as? CardCell {
+            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as? CardCell {
                 cell = reusableCell
             }
         }
+        
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if cellIndex == CellIndexType.cardView.rawValue {
+            return CGSize(width: 300, height: 400)
+        } else {
+            return CGSize(width: 350, height: 100)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

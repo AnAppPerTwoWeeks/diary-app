@@ -12,11 +12,11 @@ import RealmSwift
 class AddCardViewController: UIViewController {
     
     @IBOutlet weak var contentTextField: UITextField!
-    // @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var inputTextView: UIView!
 
+    @IBOutlet weak var leftCharacterCountLabel: UILabel!
+    @IBOutlet weak var addPhotoLabel: UILabel!
     let imagePicker = UIImagePickerController()
     
     var indexPath: Int!
@@ -25,17 +25,17 @@ class AddCardViewController: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
         contentTextField.delegate = self
-        //titleTextField.delegate = self
-        setupTextFieldUI()
+        addPhotoLabel.text = "사진을 추가하거나 수정하려면 여기를 눌러주세요"
         setupKeyboardEventListner()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         if indexPath != nil {
+            
             contentTextField.text = CardManager.shared.getCardFromList(indexPath).getCardContent()
             photoImage.image = CardManager.shared.getCardFromList(indexPath).getCardImage()
-            //titleTextField.text = CardManager.shared.getCardFromList(indexPath).getCardTitle()
+            addPhotoLabel.isHidden = true
         }
     }
     
@@ -100,6 +100,7 @@ extension AddCardViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             photoImage.image = image
+            addPhotoLabel.isHidden = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -113,6 +114,16 @@ extension AddCardViewController: UIImagePickerControllerDelegate, UINavigationCo
 // MARK: - UITextFieldDelegate Mothods
 extension AddCardViewController: UITextFieldDelegate {
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        leftCharacterCountLabel.text = "\(updatedText.count)/50"
+        return updatedText.count < 50
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hideKeyboard()
         return true
@@ -120,7 +131,6 @@ extension AddCardViewController: UITextFieldDelegate {
     
     func hideKeyboard() {
         contentTextField.resignFirstResponder()
-        //titleTextField.resignFirstResponder()
     }
     
     @objc func keyboardWillChange(notification: Notification) {
@@ -129,18 +139,10 @@ extension AddCardViewController: UITextFieldDelegate {
         }
         
         if (notification.name == UIResponder.keyboardWillShowNotification) || (notification.name == UIResponder.keyboardWillChangeFrameNotification) {
-            inputTextView.frame.origin.y = -keyboardRect.height
+            view.frame.origin.y = -keyboardRect.height
             
         } else {
-            inputTextView.frame.origin.y = -90
+            view.frame.origin.y = 0
         }
-    }
-    
-    func setupTextFieldUI() {
-        let borderColor = UIColor.white
-        contentTextField.layer.borderWidth = 1
-        contentTextField.layer.borderColor = borderColor.cgColor
-        //        titleTextField.layer.borderWidth = 1
-        //titleTextField.layer.borderColor = borderColor.cgColor
     }
 }
