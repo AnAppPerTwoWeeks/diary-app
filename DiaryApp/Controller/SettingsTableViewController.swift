@@ -29,8 +29,10 @@ class SettingsTableViewController: UITableViewController {
         if biometricSwitch.isOn != true {
             UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
         } else {
+            UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
             biometricActivation()
         }
+        print(UserDefaults.standard.bool(forKey: "biometricState"))
     }
     
     func biometricActivation() {
@@ -44,7 +46,7 @@ class SettingsTableViewController: UITableViewController {
                     if success {
                         UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
                     } else {
-                        let ac = UIAlertController(title: "오류", message: "생체인식을 사용할 수 없습니다 디바이스 설정을 확인해 주세요.", preferredStyle: .alert)
+                        let ac = UIAlertController(title: "오류", message: "생체인식을 사용할 수 없습니다.디바이스 설정 - 짧은일기 에서 생체인식을 활성화 해주세요.", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
                             self.biometricSwitch.isOn = false
                             UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")

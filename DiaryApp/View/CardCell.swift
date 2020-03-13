@@ -30,8 +30,8 @@ class CardCell: UICollectionViewCell {
         self.layer.shadowColor = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0).cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 0.0)
         self.layer.shadowRadius = 6.0
-        self.layer.shadowOpacity = 0.2
-        self.layer.cornerRadius = 15.0
+        self.layer.shadowOpacity = 0.15
+        self.layer.cornerRadius = 13.0
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
