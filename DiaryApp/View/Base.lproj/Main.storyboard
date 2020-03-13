@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7ra-iC-2Yg">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,12 +18,12 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="CardListViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r2w-PY-vVq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="593"/>
-                                <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="40" id="Bfv-OP-qFT">
                                     <size key="itemSize" width="300" height="400"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -185,7 +185,7 @@
                         <constraints>
                             <constraint firstItem="r2w-PY-vVq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JtF-z9-Tkb"/>
                             <constraint firstItem="r2w-PY-vVq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RGU-Y4-AYm"/>
-                            <constraint firstItem="r2w-PY-vVq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-50" id="Vrp-7C-rKm"/>
+                            <constraint firstItem="r2w-PY-vVq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Vrp-7C-rKm"/>
                             <constraint firstItem="r2w-PY-vVq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aNd-lx-9lx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -221,14 +221,14 @@
             <objects>
                 <viewController id="h6U-Fj-ubx" customClass="DetailCardViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zp5-VK-fJJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="idL-tR-Cav">
-                                <rect key="frame" x="0.0" y="44" width="414" height="445"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="527"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tA4-mR-Rf2">
-                                <rect key="frame" x="0.0" y="489" width="414" height="198"/>
+                                <rect key="frame" x="0.0" y="615" width="414" height="198"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la9-3u-qT1">
                                         <rect key="frame" x="30" y="50" width="354" height="105"/>
@@ -324,11 +324,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddCard" modalPresentationStyle="fullScreen" id="A2Y-jm-Gif" customClass="AddCardViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu0-A8-SHr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFP-tK-Qj8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="484"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="566"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -337,10 +337,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPk-pA-oSx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="484"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="566"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exx-g3-TSa">
-                                <rect key="frame" x="20" y="536" width="326" height="50"/>
+                                <rect key="frame" x="20" y="662" width="326" height="50"/>
                                 <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qK1-Z7-7y0"/>
@@ -350,7 +350,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVa-Ht-3ke">
-                                <rect key="frame" x="103.66666666666669" y="246.66666666666663" width="207" height="79"/>
+                                <rect key="frame" x="103.5" y="331.5" width="207" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="207" id="1nO-UL-Ujd"/>
                                     <constraint firstAttribute="height" constant="79" id="6p0-mT-Aga"/>
@@ -360,7 +360,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-d9-jyQ">
-                                <rect key="frame" x="354" y="552" width="40" height="18"/>
+                                <rect key="frame" x="354" y="678" width="40" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Ymb-8W-NCV"/>
                                 </constraints>
@@ -421,14 +421,14 @@
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="3fg-K0-JLz" customClass="SettingsTableViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gPa-e8-2Ua">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="보안" id="kZn-Wi-UP0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Hgp-fy-N1r">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hgp-fy-N1r" id="cly-GH-Vgh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -441,7 +441,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="o57-B4-rdj">
-                                                    <rect key="frame" x="345" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                    <rect key="frame" x="345" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="toggleBiometricActivation:" destination="3fg-K0-JLz" eventType="valueChanged" id="9BC-oB-w01"/>
                                                     </connections>
@@ -462,7 +462,7 @@
                             <tableViewSection headerTitle="정보" id="zIY-OZ-fjt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5zS-hA-Es9">
-                                        <rect key="frame" x="0.0" y="154.83333206176758" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="155" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5zS-hA-Es9" id="p8d-WA-wFO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -510,13 +510,13 @@
             <objects>
                 <viewController id="WJi-9o-hd1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9cb-VA-G5j">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-cG-YSC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <mutableString key="text">Realm Swift
+                                <string key="text">Realm Swift
 Copyright (c) 2011-2017 Realm Inc
 https://github.com/realm
 
@@ -539,7 +539,7 @@ The MIT License
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</mutableString>
+</string>
                                 <color key="textColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -570,7 +570,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <toolbarItems/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mhH-UE-fLh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -591,7 +591,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     <toolbarItems/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PKb-OF-ukr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -612,9 +612,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="7ra-iC-2Yg" customClass="AuthViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbn-w5-qOr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="5Gz-Eb-Tsg">
+                                <rect key="frame" x="151.5" y="393" width="111" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="3gm-wo-VqO"/>
+                                    <constraint firstAttribute="height" constant="110" id="Ixa-Lj-P08"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Gz-Eb-Tsg" firstAttribute="centerX" secondItem="cbn-w5-qOr" secondAttribute="centerX" id="Bri-uW-aNA"/>
+                            <constraint firstItem="5Gz-Eb-Tsg" firstAttribute="centerY" secondItem="cbn-w5-qOr" secondAttribute="centerY" id="G7K-37-q9P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yYe-rh-42Q"/>
                     </view>
                     <connections>
@@ -623,12 +636,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlu-GI-CO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-661" y="19"/>
+            <point key="canvasLocation" x="-662.31884057971024" y="18.75"/>
         </scene>
     </scenes>
     <resources>
         <image name="addCard_selected" width="25" height="25"/>
         <image name="addCard_unselected" width="25" height="25"/>
+        <image name="appicon" width="1024" height="1024"/>
         <image name="cardList_selected" width="25" height="25"/>
         <image name="cardList_unselected" width="25" height="25"/>
         <image name="cardView_unselected" width="25" height="25"/>

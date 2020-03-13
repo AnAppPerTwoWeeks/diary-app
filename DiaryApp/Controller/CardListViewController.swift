@@ -37,8 +37,8 @@ class CardListViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tabBarController?.tabBar.clipsToBounds = true
-        self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
-        self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
+    // self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
+    // self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
