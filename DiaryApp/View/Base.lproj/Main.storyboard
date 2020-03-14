@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7ra-iC-2Yg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -324,11 +325,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddCard" modalPresentationStyle="fullScreen" id="A2Y-jm-Gif" customClass="AddCardViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu0-A8-SHr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFP-tK-Qj8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="566"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.32156862749999998" green="0.3803921569" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -337,10 +338,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPk-pA-oSx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="566"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exx-g3-TSa">
-                                <rect key="frame" x="20" y="662" width="326" height="50"/>
+                                <rect key="frame" x="20" y="608" width="326" height="50"/>
                                 <color key="backgroundColor" red="0.95673876999999996" green="0.96042960879999995" blue="0.97705370189999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qK1-Z7-7y0"/>
@@ -350,7 +351,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVa-Ht-3ke">
-                                <rect key="frame" x="103.5" y="331.5" width="207" height="79"/>
+                                <rect key="frame" x="103.5" y="260.5" width="207" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="207" id="1nO-UL-Ujd"/>
                                     <constraint firstAttribute="height" constant="79" id="6p0-mT-Aga"/>
@@ -360,7 +361,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-d9-jyQ">
-                                <rect key="frame" x="354" y="678" width="40" height="18"/>
+                                <rect key="frame" x="354" y="624" width="40" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Ymb-8W-NCV"/>
                                 </constraints>
@@ -565,7 +566,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="aUQ-pR-BXB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="cardList_unselected" selectedImage="cardList_selected" id="ESH-Po-wox">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="0.1333333333" green="0.13725490200000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -654,7 +655,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <image name="settings_unselected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IOY-x1-M8F"/>
+        <segue reference="SzS-Fe-Rbl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.13333333333333333" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
 </document>
