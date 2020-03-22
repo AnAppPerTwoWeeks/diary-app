@@ -14,16 +14,15 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var contentTextField: UITextField!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var addButton: UIButton!
-
+    
     @IBOutlet weak var leftCharacterCountLabel: UILabel!
     @IBOutlet weak var addPhotoLabel: UILabel!
-    let imagePicker = UIImagePickerController()
+    
     
     var indexPath: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
         contentTextField.delegate = self
         addPhotoLabel.text = "사진을 추가하거나 수정하려면 여기를 눌러주세요"
         setupKeyboardEventListner()
@@ -106,6 +105,8 @@ extension AddCardViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     @IBAction func addPhotoPressed(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
     }
@@ -125,12 +126,8 @@ extension AddCardViewController: UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        hideKeyboard()
-        return true
-    }
-    
-    func hideKeyboard() {
         contentTextField.resignFirstResponder()
+        return true
     }
     
     @objc func keyboardWillChange(notification: Notification) {

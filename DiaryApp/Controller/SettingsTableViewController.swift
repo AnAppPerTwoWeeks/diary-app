@@ -19,7 +19,7 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.title = "설정"
-        biometricSwitch.isOn = UserDefaults.standard.bool(forKey: "biometricState")
+        biometricSwitch.isOn = LocalAuthUtility.isUsingAuth()
         biometricLabel.text = "Face ID / Touch ID"
         openSourceLicenseLabel.text = "오픈소스 라이브러리"
         AdmobController.setupBannerView(toViewController: self)
@@ -27,32 +27,35 @@ class SettingsTableViewController: UITableViewController {
     
     @IBAction func toggleBiometricActivation(_ sender: Any) {
         if biometricSwitch.isOn != true {
-            UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
-        } else {
-            UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
-            biometricActivation()
+            LocalAuthUtility.setUsingAuth(self.biometricSwitch.isOn)
+            return
         }
-        print(UserDefaults.standard.bool(forKey: "biometricState"))
+        LocalAuthUtility.setUsingAuth(self.biometricSwitch.isOn)
+        biometricActivation()
     }
     
     func biometricActivation() {
-        
         let context = LAContext()
-        var error: NSError?
         
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        if LocalAuthUtility.canEvaluatePolicyWithBiometrics() {
+            
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "지문 인증") { success, _ in
+                
                 DispatchQueue.main.async {
+                    
                     if success {
-                        UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
-                    } else {
-                        let ac = UIAlertController(title: "오류", message: "생체인식을 사용할 수 없습니다.디바이스 설정 - 짧은일기 에서 생체인식을 활성화 해주세요.", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
-                            self.biometricSwitch.isOn = false
-                            UserDefaults.standard.set(self.biometricSwitch.isOn, forKey: "biometricState")
-                        }))
-                        self.present(ac, animated: true)
+                        LocalAuthUtility.setUsingAuth(self.biometricSwitch.isOn)
+                        return
                     }
+                    
+                    let ac = UIAlertController(title: "오류", message: "생체인식을 사용할 수 없습니다.디바이스 설정 - 짧은일기 에서 생체인식을 활성화 해주세요.", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+                        self.biometricSwitch.isOn = false
+                        LocalAuthUtility.setUsingAuth(self.biometricSwitch.isOn)
+                    }))
+                    
+                    self.present(ac, animated: true)
+                    
                 }
             }
         }
