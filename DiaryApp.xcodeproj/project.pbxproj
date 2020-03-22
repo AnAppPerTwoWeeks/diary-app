@@ -12,6 +12,8 @@
 		D30B1708240A223B008CDD7F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B1707240A223B008CDD7F /* CardCell.swift */; };
 		D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3101C08240C1EB4009FDD9F /* CardManager.swift */; };
 		D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D311331B240AD7FB00BD9232 /* AddCardViewController.swift */; };
+		D32FCFC824271D1E00D33878 /* LocalAuthUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FCFC724271D1E00D33878 /* LocalAuthUtility.swift */; };
+		D32FCFCA2427219100D33878 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FCFC92427219100D33878 /* AlertController.swift */; };
 		D333CEF7240CF36100BDD95E /* DetailCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */; };
 		D36DD0AE2413958300154CD5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D36DD0AD2413958300154CD5 /* .swiftlint.yml */; };
 		D3A3C3082410F05D00EB11B8 /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3A3C3072410F05900EB11B8 /* Cafe24Oneprettynight.ttf */; };
@@ -34,6 +36,8 @@
 		D30B1707240A223B008CDD7F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		D3101C08240C1EB4009FDD9F /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		D311331B240AD7FB00BD9232 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		D32FCFC724271D1E00D33878 /* LocalAuthUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthUtility.swift; sourceTree = "<group>"; };
+		D32FCFC92427219100D33878 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewController.swift; sourceTree = "<group>"; };
 		D36DD0AD2413958300154CD5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D3A3C3072410F05900EB11B8 /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				D3C6CCC42412A75400F889B3 /* RootTabBarController.swift */,
 				D3B0551E2417948B008BE466 /* AuthViewController.swift */,
 				D3C4DBE9240798A6002D7743 /* CardListViewController.swift */,
+				D32FCFC92427219100D33878 /* AlertController.swift */,
 				D333CEF6240CF36100BDD95E /* DetailCardViewController.swift */,
 				D311331B240AD7FB00BD9232 /* AddCardViewController.swift */,
 				D3D7298D241521B200AC1924 /* SettingsTableViewController.swift */,
@@ -111,6 +116,14 @@
 				D30B1705240A2191008CDD7F /* Card.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D32FCFC624271CFE00D33878 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				D32FCFC724271D1E00D33878 /* LocalAuthUtility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		D39332972410E6CC00B5E9F8 /* Fonts */ = {
@@ -145,6 +158,7 @@
 			children = (
 				D3C4DBE5240798A6002D7743 /* AppDelegate.swift */,
 				D3C4DBE7240798A6002D7743 /* SceneDelegate.swift */,
+				D32FCFC624271CFE00D33878 /* Utility */,
 				D3101BFF240B9E45009FDD9F /* Model */,
 				D3101BFE240B9E3D009FDD9F /* View */,
 				D3101BFD240B9E29009FDD9F /* Controller */,
@@ -295,7 +309,9 @@
 				D30B1708240A223B008CDD7F /* CardCell.swift in Sources */,
 				D3C6CCC52412A75400F889B3 /* RootTabBarController.swift in Sources */,
 				D3101C09240C1EB4009FDD9F /* CardManager.swift in Sources */,
+				D32FCFCA2427219100D33878 /* AlertController.swift in Sources */,
 				D3C4DBEA240798A6002D7743 /* CardListViewController.swift in Sources */,
+				D32FCFC824271D1E00D33878 /* LocalAuthUtility.swift in Sources */,
 				D311331C240AD7FB00BD9232 /* AddCardViewController.swift in Sources */,
 				D3C4DBE6240798A6002D7743 /* AppDelegate.swift in Sources */,
 				D3D7298E241521B200AC1924 /* SettingsTableViewController.swift in Sources */,

@@ -54,10 +54,10 @@ class CardManager {
     
     private let realmUtility = RealmUtility<Card>()
     
-    private var cardList: Results<Card>?
+    private var cardList: Results<Card>
     
     var cardListCount: Int {
-        cardList?.count ?? 0
+        cardList.count
     }
     
     private init() {
@@ -65,7 +65,7 @@ class CardManager {
     }
     
     func getCardFromList(_ at: Int) -> Card {
-        return cardList![at]
+        return cardList[at]
     }
     
     func delete(_ object: Card) {
@@ -79,8 +79,8 @@ class CardManager {
     
     func editCardByIndex(_ content: String, _ image: UIImage, at: Int ) {
         realmUtility.edit {
-            cardList![at].content = content
-            cardList![at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
+            cardList[at].content = content
+            cardList[at].image = NSData(data: image.jpegData(compressionQuality: 0.7)!)
         }
     }
 }

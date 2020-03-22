@@ -20,8 +20,8 @@ class CardListViewController: UIViewController {
     @IBOutlet weak var cardViewImage: UIBarButtonItem!
     @IBOutlet weak var listViewImage: UIBarButtonItem!
     
-    var cellIndex = 0
-
+    var cellIndex = CellIndexType.cardView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBarAndTabBarUI()
@@ -37,34 +37,42 @@ class CardListViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tabBarController?.tabBar.clipsToBounds = true
-    // self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
-    // self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
+        // self.tabBarController?.tabBar.standardAppearance.shadowImage = nil
+        // self.tabBarController?.tabBar.standardAppearance.shadowColor = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "DetailCard" {
             return
-        } else {
-            if let detailCard = segue.destination as? DetailCardViewController {
-                if let index = sender as? Int {
-                    detailCard.indexPath = index
-                }
+        }
+        if let detailCard = segue.destination as? DetailCardViewController {
+            if let index = sender as? Int {
+                detailCard.indexPath = index
             }
         }
+        
     }
     
     @IBAction func cardViewButtonPressed(_ sender: Any) {
-        cellIndex = 0
+        cellIndex = CellIndexType.cardView
         cardViewImage.image = UIImage(named: "cardView_selected")
         listViewImage.image = UIImage(named: "listView_unselected")
         collectionView.reloadData()
     }  
     
     @IBAction func listViewButtonPressed(_ sender: Any) {
-        cellIndex = 1
+        cellIndex = CellIndexType.listView
         cardViewImage.image = UIImage(named: "cardView_unselected")
         listViewImage.image = UIImage(named: "listView_selected")
         collectionView.reloadData()
+    }
+    
+    func getReuseIdentifierName() -> String {
+        
+        if cellIndex == CellIndexType.cardView {
+            return "CardCell"
+        }
+        return "ListCell"
     }
 }
 
@@ -78,15 +86,8 @@ extension CardListViewController: UICollectionViewDataSource, UICollectionViewDe
         
         var cell = CardCell()
         
-        
-        if cellIndex == CellIndexType.cardView.rawValue {
-            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCell {
-                cell = reusableCell
-            }
-        } else {
-            if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as? CardCell {
-                cell = reusableCell
-            }
+        if let reusableCell = collectionView.dequeueReusableCell(withReuseIdentifier: getReuseIdentifierName(), for: indexPath) as? CardCell {
+            cell = reusableCell
         }
         
         cell.update(CardManager.shared.getCardFromList(indexPath.row))
@@ -95,7 +96,7 @@ extension CardListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if cellIndex == CellIndexType.cardView.rawValue {
+        if cellIndex == CellIndexType.cardView {
             return CGSize(width: 300, height: 400)
         } else {
             return CGSize(width: 350, height: 100)
